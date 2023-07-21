@@ -2,7 +2,7 @@
 
 #include "Define.h"
 
-class CObj
+class CObj abstract
 {
 public:
 	CObj();
@@ -26,9 +26,13 @@ public:
 public:
 	virtual void		Initialize()	PURE;
 	virtual int			Update()		PURE;
-	virtual void		LateUpdate()	PURE;
+	virtual void		Late_Update()	PURE;
 	virtual void		Render(HDC hDC)	PURE;
 	virtual void		Release()		PURE;
+
+protected:
+	void		Update_Rect();
+	void		Move_Frame();
 
 protected:
 	INFO		m_tInfo;

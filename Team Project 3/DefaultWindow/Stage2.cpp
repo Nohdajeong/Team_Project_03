@@ -2,7 +2,6 @@
 #include "Stage2.h"
 #include "BmpMgr.h"
 #include "ObjMgr.h"
-#include "Block.h"
 #include "AbstractFactory.h"
 #include "KeyMgr.h"
 
@@ -18,8 +17,7 @@ CStage2::~CStage2()
 
 void CStage2::Initialize()
 {
-	m_pBlock = CAbstractFactory<CBlock>::Create();
-
+	CObjMgr::Get_Instance()->Add_Object(BUTTON, CAbstractFactory<CPrint>::Create());
 
 
 	////CLineMgr::Get_Instance()->Initialize();
@@ -32,11 +30,12 @@ void CStage2::Initialize()
 
 void CStage2::Update()
 {
-	if (CKeyMgr::Get_Instance()->Key_Down(VK_SPACE)) {
-		CObjMgr::Get_Instance()->Add_Object(BLOCK, m_pBlock);
-	}
 
-	m_pBlock->Update();
+	if (m_dwPreTime + 4000 < GetTickCount64()) {
+			CObjMgr::Get_Instance()->Add_Object(BLOCK, CAbstractFactory<CBlock>::Create());
+
+			m_dwPreTime = GetTickCount64();
+	}
 
 	CObjMgr::Get_Instance()->Update();
 
@@ -51,7 +50,6 @@ void CStage2::Late_Update()
 void CStage2::Render(HDC hDC)
 {
 	Rectangle(hDC, 0, 0, WINCX, WINCY);
-	m_pBlock->Render(hDC);
 
 	CObjMgr::Get_Instance()->Render(hDC);
 
@@ -70,7 +68,7 @@ void CStage2::Render(HDC hDC)
 	////CTileMgr::Get_Instance()->Render(hDC);
 
 	swprintf_s(szBuff, L"stage2");
-	TextOut(hDC, 700.f, 100.f, szBuff, lstrlen(szBuff));
+	TextOut(hDC, 100.f, 100.f, szBuff, lstrlen(szBuff));
 
 
 }

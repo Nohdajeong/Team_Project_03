@@ -35,7 +35,6 @@ int CBlock::Update()
 {
 	Key_Input();
 
-
 	D3DXMATRIX	matScale, matRotZ, matTrans;
 
 	D3DXMatrixScaling(&matScale, -1.f, 1.f, 1.f);
@@ -51,7 +50,7 @@ int CBlock::Update()
 		D3DXVec3TransformCoord(&m_vPoint[i], &m_vPoint[i], &m_tInfo.matWorld);
 	}
 
-	if (m_tInfo.vPos.y >= 550)
+	if (m_tInfo.vPos.y >= 500)
 		m_fSpeed = 0.f;
 
 	m_tInfo.vPos.y += m_fSpeed;
@@ -61,7 +60,7 @@ int CBlock::Update()
 	return OBJ_NOEVENT;
 }
 
-void CBlock::LateUpdate()
+void CBlock::Late_Update()
 {
 }
 
@@ -76,35 +75,6 @@ void CBlock::Render(HDC hDC)
 
 	LineTo(hDC, m_vPoint[0].x, m_vPoint[0].y);
 
-
-	//Rectangle(hDC,
-	//	(int)m_vPoint[0].x - 30.f,
-	//	(int)m_vPoint[0].y,
-	//	(int)m_vPoint[0].x,
-	//	(int)m_vPoint[0].y + 30.f
-	//);
-	//Rectangle(hDC,
-	//	(int)m_vPoint[1].x,
-	//	(int)m_vPoint[1].y,
-	//	(int)m_vPoint[1].x + 30.f,
-	//	(int)m_vPoint[1].y + 30.f
-	//);
-	//Rectangle(hDC,
-	//	(int)m_vPoint[2].x,
-	//	(int)m_vPoint[2].y - 30.f,
-	//	(int)m_vPoint[2].x + 30.f ,
-	//	(int)m_vPoint[2].y
-	//);
-	//Rectangle(hDC,
-	//	(int)m_vPoint[3].x - 30.f,
-	//	(int)m_vPoint[3].y - 30.f,
-	//	(int)m_vPoint[3].x,
-	//	(int)m_vPoint[3].y
-	//);
-
-
-
-
 }
 
 void CBlock::Release()
@@ -114,7 +84,7 @@ void CBlock::Release()
 void CBlock::Key_Input()
 {
 
-	if (m_tInfo.vPos.y < 550) {
+	if (m_tInfo.vPos.y < 500) {
 		if (CKeyMgr::Get_Instance()->Key_Down('A'))
 			m_fAngle -= D3DXToRadian(45.f);
 
@@ -122,13 +92,13 @@ void CBlock::Key_Input()
 			m_fAngle += D3DXToRadian(45.f);
 
 		if (CKeyMgr::Get_Instance()->Key_Down(VK_LEFT)) {
-			if (m_tInfo.vPos.x > 50)
-				m_tInfo.vPos.x -= 50.f;
+			if (m_tInfo.vPos.x > 300)
+				m_tInfo.vPos.x -= 60.f;
 		}
 
 		if (CKeyMgr::Get_Instance()->Key_Down(VK_RIGHT)) {
-			if (m_tInfo.vPos.x < 750)
-				m_tInfo.vPos.x += 50.f;
+			if (m_tInfo.vPos.x < 700)
+				m_tInfo.vPos.x += 60.f;
 		}
 	}
 

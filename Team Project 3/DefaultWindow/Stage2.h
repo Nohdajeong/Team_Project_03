@@ -1,6 +1,8 @@
 #pragma once
 #include "Scene.h"
 #include "Obj.h"
+#include "Block.h"
+#include "Print.h"
 
 class CStage2 :
 	public CScene
@@ -18,9 +20,11 @@ public:
 
 private:
 	CObj*		m_pBlock;
+	CObj*		m_pPrint;
 
 private:
 	TCHAR	szBuff[100] = L"";
-
+	DWORD	m_dwPreTime = GetTickCount64();
+	DWORD	m_dwLastTime = GetTickCount64();
 };
 

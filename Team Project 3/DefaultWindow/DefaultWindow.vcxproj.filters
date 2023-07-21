@@ -115,6 +115,9 @@
     <Filter Include="Scene\02. Stage2\00. Obj\01. Block">
       <UniqueIdentifier>{0b23c043-8aef-450b-a189-1a7e6fe3b6a5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\02. Stage2\00. Obj\01. Print">
+      <UniqueIdentifier>{d326b37a-3c65-469d-ad5c-dc1439e4dfaf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -186,6 +189,9 @@
     <ClInclude Include="Block.h">
       <Filter>Scene\02. Stage2\00. Obj\01. Block</Filter>
     </ClInclude>
+    <ClInclude Include="Print.h">
+      <Filter>Scene\02. Stage2\00. Obj\01. Print</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -241,6 +247,9 @@
     </ClCompile>
     <ClCompile Include="Block.cpp">
       <Filter>Scene\02. Stage2\00. Obj\01. Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Print.cpp">
+      <Filter>Scene\02. Stage2\00. Obj\01. Print</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
