@@ -32,7 +32,7 @@ void CCollisionMgr::Collision_Rect(list<CObj*> _Dst, list<CObj*> _Src)
 
 void CCollisionMgr::Collision_RectEx(list<CObj*> _Dst, list<CObj*> _Src)
 {
-	float fX = 0.f, fY = 0.f;
+	//float fX = 0.f, fY = 0.f;
 
 
 	//for (auto& Dst : _Dst)

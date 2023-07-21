@@ -1,7 +1,9 @@
 #pragma once
 
-#include "IScene.h"
-#include "Define.h"
+#include "Logo.h"
+//#include "MyMenu.h"
+//#include "MyEdit.h"
+//#include "Stage.h"
 
 class CSceneMgr
 {
@@ -11,7 +13,6 @@ private:
 
 public:
 	SCENEID		Get_SceneID() { return m_eCurScene; }
-	SCENEID		Get_ScenePreID() { return m_ePreScene; }
 
 public:
 	void		Scene_Change(SCENEID eScene);
@@ -21,7 +22,7 @@ public:
 	void		Release();
 
 public:
-	static CSceneMgr*		Get_Instance()
+	static CSceneMgr* Get_Instance()
 	{
 		if (!m_pInstance)
 		{
@@ -40,8 +41,8 @@ public:
 	}
 
 private:
-	static CSceneMgr*		m_pInstance;
-	IScene*					m_pScene;
+	static CSceneMgr* m_pInstance;
+	CScene* m_pScene;
 
 	SCENEID					m_eCurScene;
 	SCENEID					m_ePreScene;

@@ -33,7 +33,6 @@ void CBlock::Initialize()
 
 int CBlock::Update()
 {
-
 	Key_Input();
 
 
@@ -58,10 +57,11 @@ int CBlock::Update()
 	m_tInfo.vPos.y += m_fSpeed;
 
 
+
 	return OBJ_NOEVENT;
 }
 
-void CBlock::Late_Update()
+void CBlock::LateUpdate()
 {
 }
 
@@ -75,6 +75,34 @@ void CBlock::Render(HDC hDC)
 	}
 
 	LineTo(hDC, m_vPoint[0].x, m_vPoint[0].y);
+
+
+	//Rectangle(hDC,
+	//	(int)m_vPoint[0].x - 30.f,
+	//	(int)m_vPoint[0].y,
+	//	(int)m_vPoint[0].x,
+	//	(int)m_vPoint[0].y + 30.f
+	//);
+	//Rectangle(hDC,
+	//	(int)m_vPoint[1].x,
+	//	(int)m_vPoint[1].y,
+	//	(int)m_vPoint[1].x + 30.f,
+	//	(int)m_vPoint[1].y + 30.f
+	//);
+	//Rectangle(hDC,
+	//	(int)m_vPoint[2].x,
+	//	(int)m_vPoint[2].y - 30.f,
+	//	(int)m_vPoint[2].x + 30.f ,
+	//	(int)m_vPoint[2].y
+	//);
+	//Rectangle(hDC,
+	//	(int)m_vPoint[3].x - 30.f,
+	//	(int)m_vPoint[3].y - 30.f,
+	//	(int)m_vPoint[3].x,
+	//	(int)m_vPoint[3].y
+	//);
+
+
 
 
 }
@@ -95,12 +123,12 @@ void CBlock::Key_Input()
 
 		if (CKeyMgr::Get_Instance()->Key_Down(VK_LEFT)) {
 			if (m_tInfo.vPos.x > 50)
-				m_tInfo.vPos.x -= m_tInfo.vDir.x * 50.f;
+				m_tInfo.vPos.x -= 50.f;
 		}
 
 		if (CKeyMgr::Get_Instance()->Key_Down(VK_RIGHT)) {
 			if (m_tInfo.vPos.x < 750)
-			m_tInfo.vPos.x += m_tInfo.vDir.x * 50.f;
+				m_tInfo.vPos.x += 50.f;
 		}
 	}
 

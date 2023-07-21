@@ -1,12 +1,17 @@
 #include "stdafx.h"
 #include "SceneMgr.h"
+#include "Logo.h"
+#include "Stage1.h"
+#include "Stage2.h"
+#include "Stage3.h"
+#include "Stage4.h"
+#include "Ending.h"
 
-#include "Tetris.h"
 
-CSceneMgr*	CSceneMgr::m_pInstance = nullptr;
+CSceneMgr* CSceneMgr::m_pInstance = nullptr;
 
 CSceneMgr::CSceneMgr()
-	: m_eCurScene(GAME), m_ePreScene(SCENE_END), m_pScene(nullptr)
+	: m_eCurScene(SC_LOGO), m_ePreScene(SC_END), m_pScene(nullptr)
 {
 }
 
@@ -25,8 +30,28 @@ void CSceneMgr::Scene_Change(SCENEID eScene)
 
 		switch (m_eCurScene)
 		{
-		case GAME:
-			m_pScene = new CTetris;
+		case SC_LOGO:
+			m_pScene = new CLogo;
+			break;
+
+		case SC_STAGE1:
+			m_pScene = new CStage1;
+			break;
+
+		case SC_STAGE2:
+			m_pScene = new CStage2;
+			break;
+
+		case SC_STAGE3:
+			m_pScene = new CStage3;
+			break;
+
+		case SC_STAGE4:
+			m_pScene = new CStage4;
+			break;
+
+		case SC_ENDING:
+			m_pScene = new CEnding;
 			break;
 		}
 

@@ -18,13 +18,8 @@
 #include <tchar.h>
 
 #include <list>
-#include <map>
-#include <vector>
 #include <algorithm>
-#include <iostream>
-
-#include <Vfw.h>
-#pragma comment(lib, "vfw32.lib")
+#include <map>
 
 
 #include <d3d9.h>

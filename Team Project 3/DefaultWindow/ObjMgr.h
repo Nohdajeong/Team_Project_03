@@ -11,10 +11,6 @@ private:
 
 public:
 	CObj* Get_Player() { return m_ObjList[PLAYER].front(); }
-	CObj* Get_Monster() { return m_ObjList[MONSTER].front(); }
-
-	list<CObj*>	Get_Objects(OBJID eId) { return m_ObjList[eId]; }
-
 	CObj* Get_Target(OBJID eID, CObj* pInstance);
 
 public:
@@ -25,7 +21,6 @@ public:
 	void		Release();
 
 	void		Delete_ID(OBJID eID);
-
 
 public:
 	static CObjMgr* Get_Instance()
@@ -48,10 +43,12 @@ public:
 
 private:
 	list<CObj*>	m_ObjList[OBJID_END];
-	list<CObj*>	m_ObjTemp[OBJID_END];
 	list<CObj*>	m_RenderList[RENDER_END];
 
 	static CObjMgr* m_pInstance;
-
-	OBJID		m_ObjID;
 };
+
+// 1. 유도 미사일 만들기(가장 가까운 객체를 탐색하여 삭제)
+
+// 2. 선을 그리고 중점 좌표를 기준으로 직선 타기를 구현하라
+// '두 점을 지나는 직선의 방정식' 참고할 것

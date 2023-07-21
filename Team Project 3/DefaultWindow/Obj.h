@@ -13,9 +13,7 @@ public:
 	bool				Get_Dead() { return m_bDead; }
 	float				Get_Speed() { return m_fSpeed; }
 
-
-	RENDERID		Get_RenderID() { return m_eRender; }
-
+	RENDERID			Get_RenderID() { return m_eRender; }
 
 public:
 	void				Set_Dead() { m_bDead = true; }
@@ -25,11 +23,10 @@ public:
 		m_tInfo.vPos.y = _fY;
 	}
 
-
 public:
 	virtual void		Initialize()	PURE;
 	virtual int			Update()		PURE;
-	virtual void		Late_Update()	PURE;
+	virtual void		LateUpdate()	PURE;
 	virtual void		Render(HDC hDC)	PURE;
 	virtual void		Release()		PURE;
 
@@ -39,11 +36,12 @@ protected:
 	DIRECTION	m_eDir;
 	FRAME		m_tFrame;
 
-	TCHAR* m_pFrameKey;
+	TCHAR*		m_pFrameKey;
 
 	float		m_fSpeed;
 	float		m_fAngle;
 
 	bool		m_bDead;
+
 };
 

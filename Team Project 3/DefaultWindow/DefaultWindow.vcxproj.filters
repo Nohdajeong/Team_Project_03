@@ -19,50 +19,101 @@
     <Filter Include="01. Obj">
       <UniqueIdentifier>{49f72e48-cb18-4e5b-bde9-39646156909b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02, Design">
-      <UniqueIdentifier>{df358255-7fa4-4469-8e01-872b4d9a9ab5}</UniqueIdentifier>
+    <Filter Include="02. Design">
+      <UniqueIdentifier>{4cfff60a-3304-4f5b-884b-b4160feb7e15}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02, Design\00. AbstractFactory">
-      <UniqueIdentifier>{ee145602-5179-4643-a86f-aa83515b94ef}</UniqueIdentifier>
+    <Filter Include="02. Design\00. AbstractFactory">
+      <UniqueIdentifier>{d43d6b5b-11ec-4689-abcb-88f3189ab195}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03 Scene">
-      <UniqueIdentifier>{43045655-2038-49bd-9f4a-41e3b47b87ef}</UniqueIdentifier>
+    <Filter Include="02. Design\01. CollisionMgr">
+      <UniqueIdentifier>{eb49c09b-cda2-440c-b87b-51cb9712d960}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03 Scene\00. Game">
-      <UniqueIdentifier>{cab72968-4355-47a8-a44f-0053fdd4d76a}</UniqueIdentifier>
+    <Filter Include="02. Design\04. KeyMgr">
+      <UniqueIdentifier>{9efb976b-e565-4bb5-afe3-8e8cc1eaf4f0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02, Design\01. CollisionMgr">
-      <UniqueIdentifier>{0e99bb79-cbbd-45b3-8416-4faef50f9988}</UniqueIdentifier>
+    <Filter Include="02. Design\06. BmpMgr">
+      <UniqueIdentifier>{392b77bb-0877-4138-8b51-da6f5b883c77}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02, Design\02. ObjMgr">
-      <UniqueIdentifier>{b3a35873-84bb-4cee-972f-914b7d5bdcac}</UniqueIdentifier>
+    <Filter Include="02. Design\06. BmpMgr\Bitmap">
+      <UniqueIdentifier>{9393c10f-c185-4cc8-ad27-26aa6203b785}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02, Design\03. LineMgr">
-      <UniqueIdentifier>{4feeb1f6-1ce7-4559-b993-158d1db82e83}</UniqueIdentifier>
+    <Filter Include="02. Design\07. SceneMgr">
+      <UniqueIdentifier>{2cbd32c8-15b4-4165-8d53-60a0e7cbee67}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02, Design\04. KeyMgr">
-      <UniqueIdentifier>{45d027a7-885f-4415-b4f8-32068d0f3fe7}</UniqueIdentifier>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{1f4f162b-63b0-49a0-af67-8dcf2f77eaa1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02, Design\05. ScrollMgr">
-      <UniqueIdentifier>{0bdc5fd0-a2b2-48c8-875b-42a64e49f660}</UniqueIdentifier>
+    <Filter Include="Scene\00. Logo">
+      <UniqueIdentifier>{32a58fb6-096d-4e28-ab1a-a495ffd8c091}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02, Design\06. BmpMgr">
-      <UniqueIdentifier>{f5a7c90d-d169-433f-a1b2-402315b7596c}</UniqueIdentifier>
+    <Filter Include="Scene\01. Stage1">
+      <UniqueIdentifier>{c59c77e5-7210-43a9-b9a1-9e57865c0027}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02, Design\07. SoundMgr">
-      <UniqueIdentifier>{84c932c6-4a5b-4e46-a14e-cff54fd30e45}</UniqueIdentifier>
+    <Filter Include="Scene\02. Stage2">
+      <UniqueIdentifier>{c8f05b46-d8dc-4a05-b073-ec609196ce85}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02, Design\08. SceneMgr">
-      <UniqueIdentifier>{c2e36a28-c457-4fee-98b6-dbd860398d10}</UniqueIdentifier>
+    <Filter Include="Scene\03. Stage3">
+      <UniqueIdentifier>{5a200445-0c0d-4d06-9226-5e25bd2de3a9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Obj\01. Block">
-      <UniqueIdentifier>{cdd5f44d-c1b2-4a35-a2d7-2aede5499212}</UniqueIdentifier>
+    <Filter Include="Scene\04. Stage4">
+      <UniqueIdentifier>{aa2e4a08-f5ad-4bed-a769-1d0ae45b99a9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02, Design\03. LineMgr\Line">
-      <UniqueIdentifier>{3e0f204f-547f-48cd-ada7-a1fee641d59c}</UniqueIdentifier>
+    <Filter Include="Scene\05. Ending">
+      <UniqueIdentifier>{19ed30a7-5db0-45a3-8a4a-bf545b7e3c39}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02, Design\06. BmpMgr\BitMap">
-      <UniqueIdentifier>{b38e480c-916a-45fa-a830-a5749eedf44c}</UniqueIdentifier>
+    <Filter Include="Scene\01. Stage1\00. Obj">
+      <UniqueIdentifier>{99b2c392-d442-4c4a-8b21-6f092d196ff9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\01. Stage1\01. Design">
+      <UniqueIdentifier>{b8e31c53-68ed-4139-8e63-dafed2e4774d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\00. Obj">
+      <UniqueIdentifier>{a425207a-32a8-42b7-9e39-a533dfb43190}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\01. Design">
+      <UniqueIdentifier>{5c516c1b-decd-4ac1-b2eb-da635d3e99c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\03. Stage3\00. Obj">
+      <UniqueIdentifier>{69b8da36-baef-4c88-848e-a5dc584c05ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\03. Stage3\01. Design">
+      <UniqueIdentifier>{3ca71743-15a6-40c4-9272-88f5e832d730}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\04. Stage4\00. Obj">
+      <UniqueIdentifier>{49dd3f88-8fcb-40fa-9524-e629251586a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\04. Stage4\01. Design">
+      <UniqueIdentifier>{69ad6b29-8baa-445a-8605-d783f1a604f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\01. Stage1\00. Obj\00. Player">
+      <UniqueIdentifier>{7a9ea549-f54e-4282-acf3-ce36c7a9966d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\01. Stage1\01. Design\00. AbstractFactory">
+      <UniqueIdentifier>{74b6c0f7-2c37-411f-a0af-4d56bcc485cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\01. Stage1\01. Design\01. CollisionMgr">
+      <UniqueIdentifier>{a8c51c04-fb49-4444-8a01-555532094ee0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\01. Stage1\01. Design\02. ObjMgr">
+      <UniqueIdentifier>{619dbd68-2d78-4a4d-83a4-d8003f439325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\01. Stage1\01. Design\03. KeyMgr">
+      <UniqueIdentifier>{be831470-5412-4006-b1b3-3e3f11913470}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\01. Stage1\01. Design\04. BmpMgr">
+      <UniqueIdentifier>{5290e405-a27d-4240-8c1a-fff82ba0bca8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\01. Stage1\01. Design\05. SceneMgr">
+      <UniqueIdentifier>{62283fa6-8c64-49a4-babd-5136a5bb48a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\01. Stage1\01. Design\06. SoundMgr">
+      <UniqueIdentifier>{763bd1d2-86c9-4827-a1cb-0e3f2deb8693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Design\02. ObjMgr">
+      <UniqueIdentifier>{691b429c-0875-4ddc-9f5c-bb24283e5a31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\00. Obj\01. Block">
+      <UniqueIdentifier>{0b23c043-8aef-450b-a189-1a7e6fe3b6a5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -90,44 +141,50 @@
     <ClInclude Include="Obj.h">
       <Filter>01. Obj</Filter>
     </ClInclude>
-    <ClInclude Include="AbstractFactory.h">
-      <Filter>02, Design\00. AbstractFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMgr.h">
-      <Filter>02, Design\02. ObjMgr</Filter>
+    <ClInclude Include="KeyMgr.h">
+      <Filter>02. Design\04. KeyMgr</Filter>
     </ClInclude>
     <ClInclude Include="SceneMgr.h">
-      <Filter>02, Design\08. SceneMgr</Filter>
+      <Filter>02. Design\07. SceneMgr</Filter>
     </ClInclude>
-    <ClInclude Include="IScene.h">
-      <Filter>03 Scene</Filter>
+    <ClInclude Include="Scene.h">
+      <Filter>Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Tetris.h">
-      <Filter>03 Scene\00. Game</Filter>
+    <ClInclude Include="Logo.h">
+      <Filter>Scene\00. Logo</Filter>
     </ClInclude>
-    <ClInclude Include="KeyMgr.h">
-      <Filter>02, Design\04. KeyMgr</Filter>
+    <ClInclude Include="Stage1.h">
+      <Filter>Scene\01. Stage1</Filter>
     </ClInclude>
-    <ClInclude Include="BmpMgr.h">
-      <Filter>02, Design\06. BmpMgr</Filter>
+    <ClInclude Include="Stage2.h">
+      <Filter>Scene\02. Stage2</Filter>
     </ClInclude>
-    <ClInclude Include="BitMap.h">
-      <Filter>02, Design\06. BmpMgr\BitMap</Filter>
+    <ClInclude Include="Stage3.h">
+      <Filter>Scene\03. Stage3</Filter>
     </ClInclude>
-    <ClInclude Include="ScrollMgr.h">
-      <Filter>02, Design\05. ScrollMgr</Filter>
+    <ClInclude Include="Stage4.h">
+      <Filter>Scene\04. Stage4</Filter>
     </ClInclude>
-    <ClInclude Include="Block.h">
-      <Filter>01. Obj\01. Block</Filter>
+    <ClInclude Include="Ending.h">
+      <Filter>Scene\05. Ending</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractFactory.h">
+      <Filter>02. Design\00. AbstractFactory</Filter>
     </ClInclude>
     <ClInclude Include="CollisionMgr.h">
-      <Filter>02, Design\01. CollisionMgr</Filter>
+      <Filter>02. Design\01. CollisionMgr</Filter>
     </ClInclude>
-    <ClInclude Include="LineMgr.h">
-      <Filter>02, Design\03. LineMgr</Filter>
+    <ClInclude Include="ObjMgr.h">
+      <Filter>02. Design\02. ObjMgr</Filter>
     </ClInclude>
-    <ClInclude Include="Line.h">
-      <Filter>02, Design\03. LineMgr\Line</Filter>
+    <ClInclude Include="BmpMgr.h">
+      <Filter>02. Design\06. BmpMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="BitMap.h">
+      <Filter>02. Design\06. BmpMgr\Bitmap</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>Scene\02. Stage2\00. Obj\01. Block</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -143,38 +200,47 @@
     <ClCompile Include="Obj.cpp">
       <Filter>01. Obj</Filter>
     </ClCompile>
-    <ClCompile Include="ObjMgr.cpp">
-      <Filter>02, Design\02. ObjMgr</Filter>
+    <ClCompile Include="KeyMgr.cpp">
+      <Filter>02. Design\04. KeyMgr</Filter>
     </ClCompile>
     <ClCompile Include="SceneMgr.cpp">
-      <Filter>02, Design\08. SceneMgr</Filter>
+      <Filter>02. Design\07. SceneMgr</Filter>
     </ClCompile>
-    <ClCompile Include="Tetris.cpp">
-      <Filter>03 Scene\00. Game</Filter>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="KeyMgr.cpp">
-      <Filter>02, Design\04. KeyMgr</Filter>
+    <ClCompile Include="Logo.cpp">
+      <Filter>Scene\00. Logo</Filter>
     </ClCompile>
-    <ClCompile Include="BmpMgr.cpp">
-      <Filter>02, Design\06. BmpMgr</Filter>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>Scene\01. Stage1</Filter>
     </ClCompile>
-    <ClCompile Include="BitMap.cpp">
-      <Filter>02, Design\06. BmpMgr\BitMap</Filter>
+    <ClCompile Include="Stage2.cpp">
+      <Filter>Scene\02. Stage2</Filter>
     </ClCompile>
-    <ClCompile Include="ScrollMgr.cpp">
-      <Filter>02, Design\05. ScrollMgr</Filter>
+    <ClCompile Include="Stage3.cpp">
+      <Filter>Scene\03. Stage3</Filter>
     </ClCompile>
-    <ClCompile Include="Block.cpp">
-      <Filter>01. Obj\01. Block</Filter>
+    <ClCompile Include="Stage4.cpp">
+      <Filter>Scene\04. Stage4</Filter>
+    </ClCompile>
+    <ClCompile Include="Ending.cpp">
+      <Filter>Scene\05. Ending</Filter>
     </ClCompile>
     <ClCompile Include="CollisionMgr.cpp">
-      <Filter>02, Design\01. CollisionMgr</Filter>
+      <Filter>02. Design\01. CollisionMgr</Filter>
     </ClCompile>
-    <ClCompile Include="LineMgr.cpp">
-      <Filter>02, Design\03. LineMgr</Filter>
+    <ClCompile Include="ObjMgr.cpp">
+      <Filter>02. Design\02. ObjMgr</Filter>
     </ClCompile>
-    <ClCompile Include="Line.cpp">
-      <Filter>02, Design\03. LineMgr\Line</Filter>
+    <ClCompile Include="BmpMgr.cpp">
+      <Filter>02. Design\06. BmpMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="BitMap.cpp">
+      <Filter>02. Design\06. BmpMgr\Bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>Scene\02. Stage2\00. Obj\01. Block</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

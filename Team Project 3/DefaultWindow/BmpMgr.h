@@ -1,5 +1,4 @@
 #pragma once
-
 #include "BitMap.h"
 
 class CBmpMgr
