@@ -1,0 +1,22 @@
+단어 테트리스
+
+문장
+Hello world
+MFC
+WIN API
+VECTOR
+
+
+위에서 떨어지는 컨셉
+왼쪽(VK_LEFT) : -n
+오른쪽(VK_RIGHT) : +n
+왼쪽 턴(A) : rotation -
+오른쪽 턴(D) : rotation +
+
+충돌처리
+라인충돌
+Collision RectEx
+
+
+이미지
+비트맵 2개로 정리
