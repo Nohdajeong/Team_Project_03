@@ -13,6 +13,8 @@ public:
 	CObj* Get_Player() { return m_ObjList[PLAYER].front(); }
 	CObj* Get_Target(OBJID eID, CObj* pInstance);
 
+	list<CObj*>	Get_Objects(OBJID eId) { return m_ObjList[eId]; }
+
 public:
 	void		Add_Object(OBJID eID, CObj* pInstance);
 	int			Update();

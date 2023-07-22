@@ -23,6 +23,6 @@ private:
     D3DXVECTOR3		m_vOriginalPoint[4];
 
 private:
-
+    float       m_fFirst;
 };
 

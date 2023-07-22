@@ -96,28 +96,37 @@ bool CCollisionMgrS2::Check_Rect(CObj* _Dst, CObj* _Src, float* _pX, float* _pY)
 
 void CCollisionMgrS2::Collision_Sphere(list<CObj*> _Dst, list<CObj*> _Src)
 {
-	/*for (auto& Dst : _Dst)
+	for (auto& Dst : _Dst)
 	{
 		for (auto& Src : _Src)
 		{
 			if (Check_Sphere(Dst, Src))
 			{
-				Dst->Set_Dead();
-				Src->Set_Dead();
+				Dst->Set_Pos(Vector_Reset(Dst).x, Vector_Reset(Dst).y);
 			}
 		}
-	}*/
+	}
 }
 
 bool CCollisionMgrS2::Check_Sphere(CObj* _Dst, CObj* _Src)
 {
-	/*float	fWidth = abs(_Dst->Get_Info().fX - _Src->Get_Info().fX);
-	float	fHeight = _Dst->Get_Info().fY - _Src->Get_Info().fY;
+	float	fWidth = abs(_Dst->Get_Info().vPos.x - _Src->Get_Info().vPos.x);
+	float	fHeight = _Dst->Get_Info().vPos.y - _Src->Get_Info().vPos.y;
 
 	float	fDiagonal = sqrt(fWidth * fWidth + fHeight * fHeight);
 
-	float	fRadius = (_Dst->Get_Info().fCX + _Src->Get_Info().fCX) * 0.5f;
+	float	fRadius = (_Dst->Get_fCX() + _Src->Get_fCX()) * 0.5f;
 
-	return fDiagonal <= fRadius;*/
+	return fDiagonal <= fRadius;
 	return false;
+}
+
+D3DXVECTOR3 CCollisionMgrS2::Vector_Reset(CObj* _Dst)
+{
+	D3DXVECTOR3		m_vPrepos;
+
+	m_vPrepos.x = _Dst->Get_Info().vPrepos.x;
+	m_vPrepos.y = _Dst->Get_Info().vPrepos.y;
+
+	return m_vPrepos;
 }

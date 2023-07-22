@@ -6,6 +6,8 @@
 #include "KeyMgrS2.h"
 #include "TileMgrS2.h"
 #include "ScrollMgr.h"
+#include "time.h"
+#include "CollisionMgrS2.h"
 
 CStage2::CStage2()
 {
@@ -18,10 +20,12 @@ CStage2::~CStage2()
 
 void CStage2::Initialize()
 {
+	srand((unsigned int)time(NULL));
+
 	CObjMgrS2::Get_Instance()->Add_Object(PLAYBOX, CAbstractFactoryS2<CPlayBox>::Create());
 	CObjMgrS2::Get_Instance()->Add_Object(BUTTON, CAbstractFactoryS2<CPrint>::Create());
 
-	CBmpMgrS2::Get_Instance()->Insert_Bmp(L"../Resource/Back.bmp", L"Back_Game");
+	CBmpMgrS2::Get_Instance()->Insert_Bmp(L"../Resource/PlayBox.bmp", L"Back_Game");
 
 }
 
@@ -42,11 +46,18 @@ void CStage2::Update()
 
 	CObjMgrS2::Get_Instance()->Update();
 
+
 }
 
 void CStage2::Late_Update()
 {
 	CObjMgrS2::Get_Instance()->Late_Update();
+
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCK),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCK));
+
+
 }
 
 void CStage2::Render(HDC hDC)

@@ -73,6 +73,7 @@ int CObjMgrS2::Update()
 		}
 	}
 
+
 	return 0;
 }
 

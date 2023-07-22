@@ -24,6 +24,7 @@ extern	HWND	g_hWnd;
 typedef struct tagInfo
 {
 	D3DXVECTOR3		vPos;
+	D3DXVECTOR3		vPrepos;
 	
 	D3DXVECTOR3		vDir;
 	D3DXVECTOR3		vLook;
