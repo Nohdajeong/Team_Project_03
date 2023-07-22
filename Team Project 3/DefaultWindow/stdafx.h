@@ -18,8 +18,9 @@
 #include <tchar.h>
 
 #include <list>
-#include <algorithm>
 #include <map>
+#include <vector>
+#include <algorithm>
 
 
 #include <d3d9.h>

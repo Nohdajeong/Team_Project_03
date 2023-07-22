@@ -34,9 +34,6 @@
     <Filter Include="02. Design\06. BmpMgr">
       <UniqueIdentifier>{392b77bb-0877-4138-8b51-da6f5b883c77}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02. Design\06. BmpMgr\Bitmap">
-      <UniqueIdentifier>{9393c10f-c185-4cc8-ad27-26aa6203b785}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02. Design\07. SceneMgr">
       <UniqueIdentifier>{2cbd32c8-15b4-4165-8d53-60a0e7cbee67}</UniqueIdentifier>
     </Filter>
@@ -118,6 +115,36 @@
     <Filter Include="Scene\02. Stage2\00. Obj\01. Print">
       <UniqueIdentifier>{d326b37a-3c65-469d-ad5c-dc1439e4dfaf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\02. Stage2\01. Design\00. AbstractFactory_S2">
+      <UniqueIdentifier>{515e0d38-87b5-4706-93a6-74205f459f8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\01. Design\01. CollisionMgr">
+      <UniqueIdentifier>{66010c35-18ed-482c-aa2a-fb6b6612a195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\01. Design\02. ObjMgr">
+      <UniqueIdentifier>{3eaac4ee-4042-4815-9d1a-9e325604565d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\01. Design\03. KeyMgr">
+      <UniqueIdentifier>{51b83868-cc58-49c7-bc97-b0a3a577cdfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\01. Design\04. BmpMgr">
+      <UniqueIdentifier>{8ef1589f-47ad-4cc1-b460-f8eb4cb3f6a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\01. Design\04. BmpMgr\Bitmap">
+      <UniqueIdentifier>{9393c10f-c185-4cc8-ad27-26aa6203b785}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\01. Design\05. SceneMgr">
+      <UniqueIdentifier>{1ee51535-dd93-4975-9924-6be53a795fd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\01. Design\06. TileMgr">
+      <UniqueIdentifier>{a2438527-817c-46c6-9228-913c398df414}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\01. Design\06. TileMgr\Tile">
+      <UniqueIdentifier>{c839aeda-1e9f-4903-8a8f-798bd8461fdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\01. Design\07. ScrollMgr">
+      <UniqueIdentifier>{ed960eff-d346-44d5-8b28-a7e999b26e00}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -144,12 +171,6 @@
     <ClInclude Include="Obj.h">
       <Filter>01. Obj</Filter>
     </ClInclude>
-    <ClInclude Include="KeyMgr.h">
-      <Filter>02. Design\04. KeyMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneMgr.h">
-      <Filter>02. Design\07. SceneMgr</Filter>
-    </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>Scene</Filter>
     </ClInclude>
@@ -171,26 +192,41 @@
     <ClInclude Include="Ending.h">
       <Filter>Scene\05. Ending</Filter>
     </ClInclude>
-    <ClInclude Include="AbstractFactory.h">
-      <Filter>02. Design\00. AbstractFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionMgr.h">
-      <Filter>02. Design\01. CollisionMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMgr.h">
-      <Filter>02. Design\02. ObjMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="BmpMgr.h">
-      <Filter>02. Design\06. BmpMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="BitMap.h">
-      <Filter>02. Design\06. BmpMgr\Bitmap</Filter>
+    <ClInclude Include="BitMapS2.h">
+      <Filter>Scene\02. Stage2\01. Design\04. BmpMgr\Bitmap</Filter>
     </ClInclude>
     <ClInclude Include="Block.h">
       <Filter>Scene\02. Stage2\00. Obj\01. Block</Filter>
     </ClInclude>
     <ClInclude Include="Print.h">
       <Filter>Scene\02. Stage2\00. Obj\01. Print</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractFactoryS2.h">
+      <Filter>Scene\02. Stage2\01. Design\00. AbstractFactory_S2</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMgrS2.h">
+      <Filter>Scene\02. Stage2\01. Design\01. CollisionMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMgrS2.h">
+      <Filter>Scene\02. Stage2\01. Design\02. ObjMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyMgrS2.h">
+      <Filter>Scene\02. Stage2\01. Design\03. KeyMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="BmpMgrS2.h">
+      <Filter>Scene\02. Stage2\01. Design\04. BmpMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMgr.h">
+      <Filter>Scene\02. Stage2\01. Design\05. SceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMgrS2.h">
+      <Filter>Scene\02. Stage2\01. Design\06. TileMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Scene\02. Stage2\01. Design\06. TileMgr\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollMgr.h">
+      <Filter>Scene\02. Stage2\01. Design\07. ScrollMgr</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -205,12 +241,6 @@
     </ClCompile>
     <ClCompile Include="Obj.cpp">
       <Filter>01. Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyMgr.cpp">
-      <Filter>02. Design\04. KeyMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneMgr.cpp">
-      <Filter>02. Design\07. SceneMgr</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>Scene</Filter>
@@ -233,23 +263,38 @@
     <ClCompile Include="Ending.cpp">
       <Filter>Scene\05. Ending</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionMgr.cpp">
-      <Filter>02. Design\01. CollisionMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjMgr.cpp">
-      <Filter>02. Design\02. ObjMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="BmpMgr.cpp">
-      <Filter>02. Design\06. BmpMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="BitMap.cpp">
-      <Filter>02. Design\06. BmpMgr\Bitmap</Filter>
+    <ClCompile Include="BitMapS2.cpp">
+      <Filter>Scene\02. Stage2\01. Design\04. BmpMgr\Bitmap</Filter>
     </ClCompile>
     <ClCompile Include="Block.cpp">
       <Filter>Scene\02. Stage2\00. Obj\01. Block</Filter>
     </ClCompile>
     <ClCompile Include="Print.cpp">
       <Filter>Scene\02. Stage2\00. Obj\01. Print</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionMgrS2.cpp">
+      <Filter>Scene\02. Stage2\01. Design\01. CollisionMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMgrS2.cpp">
+      <Filter>Scene\02. Stage2\01. Design\02. ObjMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyMgrS2.cpp">
+      <Filter>Scene\02. Stage2\01. Design\03. KeyMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="BmpMgrS2.cpp">
+      <Filter>Scene\02. Stage2\01. Design\04. BmpMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMgr.cpp">
+      <Filter>Scene\02. Stage2\01. Design\05. SceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMgrS2.cpp">
+      <Filter>Scene\02. Stage2\01. Design\06. TileMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Scene\02. Stage2\01. Design\06. TileMgr\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollMgr.cpp">
+      <Filter>Scene\02. Stage2\01. Design\07. ScrollMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

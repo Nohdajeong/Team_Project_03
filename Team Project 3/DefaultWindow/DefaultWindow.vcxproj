@@ -151,45 +151,49 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AbstractFactory.h" />
-    <ClInclude Include="BitMap.h" />
+    <ClInclude Include="AbstractFactoryS2.h" />
+    <ClInclude Include="BitMapS2.h" />
     <ClInclude Include="Block.h" />
-    <ClInclude Include="BmpMgr.h" />
-    <ClInclude Include="CollisionMgr.h" />
+    <ClInclude Include="BmpMgrS2.h" />
+    <ClInclude Include="CollisionMgrS2.h" />
     <ClInclude Include="Ending.h" />
-    <ClInclude Include="KeyMgr.h" />
+    <ClInclude Include="KeyMgrS2.h" />
     <ClInclude Include="DefaultWindow.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Logo.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="Obj.h" />
-    <ClInclude Include="ObjMgr.h" />
+    <ClInclude Include="ObjMgrS2.h" />
     <ClInclude Include="Print.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneMgr.h" />
+    <ClInclude Include="ScrollMgr.h" />
     <ClInclude Include="Stage1.h" />
     <ClInclude Include="Stage2.h" />
     <ClInclude Include="Stage3.h" />
     <ClInclude Include="Stage4.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="TileMgrS2.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BitMap.cpp" />
+    <ClCompile Include="BitMapS2.cpp" />
     <ClCompile Include="Block.cpp" />
-    <ClCompile Include="BmpMgr.cpp" />
-    <ClCompile Include="CollisionMgr.cpp" />
+    <ClCompile Include="BmpMgrS2.cpp" />
+    <ClCompile Include="CollisionMgrS2.cpp" />
     <ClCompile Include="Ending.cpp" />
-    <ClCompile Include="KeyMgr.cpp" />
+    <ClCompile Include="KeyMgrS2.cpp" />
     <ClCompile Include="DefaultWindow.cpp" />
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="Obj.cpp" />
-    <ClCompile Include="ObjMgr.cpp" />
+    <ClCompile Include="ObjMgrS2.cpp" />
     <ClCompile Include="Print.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
+    <ClCompile Include="ScrollMgr.cpp" />
     <ClCompile Include="Stage1.cpp" />
     <ClCompile Include="Stage2.cpp" />
     <ClCompile Include="Stage3.cpp" />
@@ -200,6 +204,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="TileMgrS2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DefaultWindow.rc" />

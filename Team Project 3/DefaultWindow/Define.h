@@ -3,11 +3,21 @@
 
 #define		WINCX		800
 #define		WINCY		600
+
 #define		VK_MAX		0xff
+
 #define		PURE		= 0
 #define		PI			3.141592f
+
 #define		OBJ_DEAD	 1
 #define		OBJ_NOEVENT	 0
+
+#define		TILEX		30
+#define		TILEY		20
+
+#define		TILECX		60
+#define		TILECY		60
+
 
 extern	HWND	g_hWnd;
 

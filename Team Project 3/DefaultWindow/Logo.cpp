@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Logo.h"
-#include "BmpMgr.h"
-#include "KeyMgr.h"
+#include "BmpMgrS2.h"
+#include "KeyMgrS2.h"
 #include "SceneMgr.h"
 
 CLogo::CLogo()

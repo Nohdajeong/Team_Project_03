@@ -14,6 +14,10 @@ public:
 	float				Get_Speed() { return m_fSpeed; }
 
 	RENDERID			Get_RenderID() { return m_eRender; }
+	int					Get_DrawID() { return m_iDrawID; }
+
+	float				Get_fCX() { return m_fCX; }
+	float				Get_fCY() { return m_fCY; }
 
 public:
 	void				Set_Dead() { m_bDead = true; }
@@ -36,6 +40,7 @@ protected:
 
 protected:
 	INFO		m_tInfo;
+	RECT		m_tRect;
 	RENDERID	m_eRender;
 	DIRECTION	m_eDir;
 	FRAME		m_tFrame;
@@ -47,5 +52,9 @@ protected:
 
 	bool		m_bDead;
 
+	int			m_iDrawID = 0;
+
+	float		m_fCX;
+	float		m_fCY;
 };
 

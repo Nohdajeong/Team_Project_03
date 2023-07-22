@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "MainGame.h"
 #include "SceneMgr.h"
-#include "ObjMgr.h"
-#include "BmpMgr.h"
-#include "KeyMgr.h"
+#include "ObjMgrS2.h"
+#include "BmpMgrS2.h"
+#include "KeyMgrS2.h"
 
 CMainGame::CMainGame()
 {
@@ -43,9 +43,9 @@ void CMainGame::Render(void)
 void CMainGame::Release(void)
 {
 	CSceneMgr::Destroy_Instance();
-	CObjMgr::Destroy_Instance();
-	CBmpMgr::Destroy_Instance();
-	CKeyMgr::Destroy_Instance();
+	CObjMgrS2::Destroy_Instance();
+	CBmpMgrS2::Destroy_Instance();
+	CKeyMgrS2::Destroy_Instance();
 
 	ReleaseDC(g_hWnd, m_DC);
 }

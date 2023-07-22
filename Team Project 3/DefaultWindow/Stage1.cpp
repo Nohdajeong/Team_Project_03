@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Stage1.h"
-#include "BmpMgr.h"
-#include "ObjMgr.h"
+#include "BmpMgrS2.h"
+#include "ObjMgrS2.h"
 
 CStage1::CStage1()
 {

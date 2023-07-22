@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Print.h"
-#include "KeyMgr.h"
-#include "BmpMgr.h"
+#include "KeyMgrS2.h"
+#include "BmpMgrS2.h"
 
 CPrint::CPrint()
 {
@@ -26,7 +26,7 @@ void CPrint::Initialize()
 
 	m_fSpeed = 3.f;
 
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Resource/Teacher.bmp", L"Teacher");
+	CBmpMgrS2::Get_Instance()->Insert_Bmp(L"../Resource/Teacher.bmp", L"Teacher");
 
 	m_tFrame.iFrameStart = 0;
 	m_tFrame.iFrameEnd = 2;
@@ -60,7 +60,7 @@ void CPrint::Render(HDC hDC)
 
 	LineTo(hDC, m_vPoint[0].x, m_vPoint[0].y);
 
-	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Img(L"Teacher");
+	HDC		hMemDC = CBmpMgrS2::Get_Instance()->Find_Img(L"Teacher");
 
 		GdiTransparentBlt(hDC,
 			(int)m_tInfo.vPos.x, // 복사 받을 위치 X,Y 좌표
