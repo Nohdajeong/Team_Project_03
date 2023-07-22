@@ -23,6 +23,10 @@ public:
 
 public:
 	void				Set_Dead() { m_bDead = true; }
+
+	void				Set_PosX(float _fX) { m_tInfo.vPos.x += _fX; }
+	void				Set_PosY(float _fY) { m_tInfo.vPos.y += _fY; }
+
 	void				Set_Pos(float _fX, float _fY)
 	{
 		m_tInfo.vPos.x = _fX;

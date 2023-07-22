@@ -1,7 +1,8 @@
 #pragma once
 #include "Scene.h"
 #include "Obj.h"
-#include "Block.h"
+#include "BlockJ.h"
+#include "BlockU.h"
 #include "Print.h"
 #include "PlayBox.h"
 
@@ -20,13 +21,14 @@ public:
 	virtual void Release() override;
 
 private:
-	CObj*	m_pBlock;
+	CObj* m_pBlock;
 
-private:
 	TCHAR	szBuff[100] = L"";
 	DWORD	m_dwPreTime = GetTickCount64();
 	DWORD	m_dwLastTime = GetTickCount64();
+	DWORD	m_dwTime = GetTickCount64();
 
 	int		m_iTime = 0;
+	int		m_iRand = 0;
 };
 

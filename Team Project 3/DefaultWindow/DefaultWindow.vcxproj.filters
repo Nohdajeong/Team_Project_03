@@ -148,6 +148,12 @@
     <Filter Include="Scene\02. Stage2\00. Obj\02. PlayBox">
       <UniqueIdentifier>{7d279111-352f-4ab7-93f8-9970576ee55e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\02. Stage2\00. Obj\01. Block\J">
+      <UniqueIdentifier>{a0a0841d-e9af-456f-8d30-aebec8addc73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\00. Obj\01. Block\U">
+      <UniqueIdentifier>{50f4707a-8fb5-4b8c-95a6-1be70b104745}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -170,9 +176,6 @@
     </ClInclude>
     <ClInclude Include="Define.h">
       <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Obj.h">
-      <Filter>01. Obj</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>Scene</Filter>
@@ -197,9 +200,6 @@
     </ClInclude>
     <ClInclude Include="BitMapS2.h">
       <Filter>Scene\02. Stage2\01. Design\04. BmpMgr\Bitmap</Filter>
-    </ClInclude>
-    <ClInclude Include="Block.h">
-      <Filter>Scene\02. Stage2\00. Obj\01. Block</Filter>
     </ClInclude>
     <ClInclude Include="Print.h">
       <Filter>Scene\02. Stage2\00. Obj\01. Print</Filter>
@@ -234,6 +234,15 @@
     <ClInclude Include="PlayBox.h">
       <Filter>Scene\02. Stage2\00. Obj\02. PlayBox</Filter>
     </ClInclude>
+    <ClInclude Include="BlockJ.h">
+      <Filter>Scene\02. Stage2\00. Obj\01. Block\J</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockU.h">
+      <Filter>Scene\02. Stage2\00. Obj\01. Block\U</Filter>
+    </ClInclude>
+    <ClInclude Include="Obj.h">
+      <Filter>Scene\02. Stage2\00. Obj</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -244,9 +253,6 @@
     </ClCompile>
     <ClCompile Include="MainGame.cpp">
       <Filter>00. MainGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Obj.cpp">
-      <Filter>01. Obj</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>Scene</Filter>
@@ -271,9 +277,6 @@
     </ClCompile>
     <ClCompile Include="BitMapS2.cpp">
       <Filter>Scene\02. Stage2\01. Design\04. BmpMgr\Bitmap</Filter>
-    </ClCompile>
-    <ClCompile Include="Block.cpp">
-      <Filter>Scene\02. Stage2\00. Obj\01. Block</Filter>
     </ClCompile>
     <ClCompile Include="Print.cpp">
       <Filter>Scene\02. Stage2\00. Obj\01. Print</Filter>
@@ -304,6 +307,15 @@
     </ClCompile>
     <ClCompile Include="PlayBox.cpp">
       <Filter>Scene\02. Stage2\00. Obj\02. PlayBox</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockJ.cpp">
+      <Filter>Scene\02. Stage2\00. Obj\01. Block\J</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockU.cpp">
+      <Filter>Scene\02. Stage2\00. Obj\01. Block\U</Filter>
+    </ClCompile>
+    <ClCompile Include="Obj.cpp">
+      <Filter>Scene\02. Stage2\00. Obj</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

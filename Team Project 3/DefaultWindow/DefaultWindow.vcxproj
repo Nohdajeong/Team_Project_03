@@ -153,7 +153,8 @@
   <ItemGroup>
     <ClInclude Include="AbstractFactoryS2.h" />
     <ClInclude Include="BitMapS2.h" />
-    <ClInclude Include="Block.h" />
+    <ClInclude Include="BlockJ.h" />
+    <ClInclude Include="BlockU.h" />
     <ClInclude Include="BmpMgrS2.h" />
     <ClInclude Include="CollisionMgrS2.h" />
     <ClInclude Include="Ending.h" />
@@ -181,7 +182,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BitMapS2.cpp" />
-    <ClCompile Include="Block.cpp" />
+    <ClCompile Include="BlockJ.cpp" />
+    <ClCompile Include="BlockU.cpp" />
     <ClCompile Include="BmpMgrS2.cpp" />
     <ClCompile Include="CollisionMgrS2.cpp" />
     <ClCompile Include="Ending.cpp" />

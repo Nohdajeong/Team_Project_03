@@ -14,37 +14,38 @@ CObjMgrS2::~CObjMgrS2()
 	Release();
 }
 
-//CObj* CObjMgr::Get_Target(OBJID eID, CObj* pInstance)
-//{
 
-	//if (m_ObjList[eID].empty())
-	//	return nullptr;
+CObj* CObjMgrS2::Get_Target(OBJID eID, CObj* pInstance)
+{
 
-	//CObj* pTarget = nullptr;
-	//float	fDistance = 0.f;
+	if (m_ObjList[eID].empty())
+		return nullptr;
 
-	//for (auto& iter : m_ObjList[eID])
-	//{
-	//	if (iter->Get_Dead())
-	//		continue;
+	CObj* pTarget = nullptr;
+	float	fDistance = 0.f;
 
-	//	float	fWidth = iter->Get_Info().fX - pInstance->Get_Info().fX;
-	//	float	fHeight = iter->Get_Info().fY - pInstance->Get_Info().fY;
+	for (auto& iter : m_ObjList[eID])
+	{
+		if (iter->Get_Dead())
+			continue;
 
-	//	float	fDiagonal = sqrtf(fWidth * fWidth + fHeight * fHeight);
+		float	fWidth = iter->Get_Info().vPos.x - pInstance->Get_Info().vPos.x;
+		float	fHeight = iter->Get_Info().vPos.y - pInstance->Get_Info().vPos.y;
 
-	//	// 최초의 경우
-	//	if ((!pTarget) || (fDistance > fDiagonal))
-	//	{
-	//		pTarget = iter;
-	//		fDistance = fDiagonal;
-	//	}
-	//}
+		float	fDiagonal = sqrtf(fWidth * fWidth + fHeight * fHeight);
 
-	//return pTarget;
+		// 최초의 경우
+		if ((!pTarget) || (fDistance > fDiagonal))
+		{
+			pTarget = iter;
+			fDistance = fDiagonal;
+		}
+	}
+
+	return pTarget;
 
 
-//}
+}
 
 void CObjMgrS2::Add_Object(OBJID eID, CObj* pInstance)
 {

@@ -26,22 +26,35 @@ void CStage2::Initialize()
 	CObjMgrS2::Get_Instance()->Add_Object(BUTTON, CAbstractFactoryS2<CPrint>::Create());
 
 	CBmpMgrS2::Get_Instance()->Insert_Bmp(L"../Resource/PlayBox.bmp", L"Back_Game");
+	m_iRand = 0;
 
 }
 
 void CStage2::Update()
 {
-	m_pBlock = CAbstractFactoryS2<CBlock>::Create();
+	if (m_dwPreTime + 4000 < GetTickCount64()) {
 
-	if (m_dwPreTime + 3000 < GetTickCount64()) {
-		CObjMgrS2::Get_Instance()->Add_Object(BLOCK, m_pBlock);
+
+		switch (m_iRand % 2)
+		{
+		case 0:
+			CObjMgrS2::Get_Instance()->Add_Object(BLOCKJ, CAbstractFactoryS2<CBlockJ>::Create());
+			m_iRand++;
+			break;
+
+		case 1:
+			CObjMgrS2::Get_Instance()->Add_Object(BLOCKU, CAbstractFactoryS2<CBlockU>::Create());
+			m_iRand++;
+			break;
+		}
+
 
 		m_dwPreTime = GetTickCount64();
 	}
 
-	if (m_dwLastTime + 1000 < GetTickCount64()) {
+	if (m_dwTime + 1000 < GetTickCount64()) {
 		m_iTime++;
-		m_dwLastTime = GetTickCount64();
+		m_dwTime = GetTickCount64();
 	}
 
 	CObjMgrS2::Get_Instance()->Update();
@@ -53,10 +66,13 @@ void CStage2::Late_Update()
 {
 	CObjMgrS2::Get_Instance()->Late_Update();
 
-	CCollisionMgrS2::Collision_Sphere(
-		CObjMgrS2::Get_Instance()->Get_Objects(BLOCK),
-		CObjMgrS2::Get_Instance()->Get_Objects(BLOCK));
+	//CCollisionMgrS2::Collision_Sphere(
+	//	CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ),
+	//	CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU));
 
+	//CCollisionMgrS2::Collision_Sphere(
+	//	CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU),
+	//	CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ));
 
 }
 

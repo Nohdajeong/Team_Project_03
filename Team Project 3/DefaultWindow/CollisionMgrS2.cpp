@@ -96,16 +96,22 @@ bool CCollisionMgrS2::Check_Rect(CObj* _Dst, CObj* _Src, float* _pX, float* _pY)
 
 void CCollisionMgrS2::Collision_Sphere(list<CObj*> _Dst, list<CObj*> _Src)
 {
-	for (auto& Dst : _Dst)
-	{
-		for (auto& Src : _Src)
-		{
-			if (Check_Sphere(Dst, Src))
-			{
-				Dst->Set_Pos(Vector_Reset(Dst).x, Vector_Reset(Dst).y);
-			}
-		}
-	}
+	//float fX = 0.f, fY = 0.f;
+
+	//for (auto& Dst : _Dst)
+	//{
+	//	for (auto& Src : _Src)
+	//	{
+	//		if (Check_Sphere(Dst, Src))
+	//		{
+	//				// »ó Ãæµ¹
+	//				if (Dst->Get_Info().vPos.y < Src->Get_Info().vPos.y)
+	//				{
+	//					Dst->Set_PosY(+fY);
+	//				}
+	//		}
+	//	}
+	//}
 }
 
 bool CCollisionMgrS2::Check_Sphere(CObj* _Dst, CObj* _Src)
