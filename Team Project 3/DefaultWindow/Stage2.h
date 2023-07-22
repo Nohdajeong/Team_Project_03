@@ -3,6 +3,7 @@
 #include "Obj.h"
 #include "Block.h"
 #include "Print.h"
+#include "PlayBox.h"
 
 class CStage2 :
 	public CScene
@@ -19,12 +20,13 @@ public:
 	virtual void Release() override;
 
 private:
-	CObj*		m_pBlock;
-	CObj*		m_pPrint;
+	CObj*	m_pBlock;
 
 private:
 	TCHAR	szBuff[100] = L"";
 	DWORD	m_dwPreTime = GetTickCount64();
 	DWORD	m_dwLastTime = GetTickCount64();
+
+	int		m_iTime = 0;
 };
 

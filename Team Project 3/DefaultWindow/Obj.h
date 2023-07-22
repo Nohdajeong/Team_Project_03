@@ -19,6 +19,8 @@ public:
 	float				Get_fCX() { return m_fCX; }
 	float				Get_fCY() { return m_fCY; }
 
+	int					Get_Score() { return m_iScore; }
+
 public:
 	void				Set_Dead() { m_bDead = true; }
 	void				Set_Pos(float _fX, float _fY)
@@ -26,6 +28,9 @@ public:
 		m_tInfo.vPos.x = _fX;
 		m_tInfo.vPos.y = _fY;
 	}
+
+	void				Set_Target(CObj* _pTarget) { m_pTarget = _pTarget; }
+	void				Set_Score(int _iScore) { m_iScore += _iScore; }
 
 public:
 	virtual void		Initialize()	PURE;
@@ -45,6 +50,7 @@ protected:
 	DIRECTION	m_eDir;
 	FRAME		m_tFrame;
 
+	CObj*		m_pTarget;
 	TCHAR*		m_pFrameKey;
 
 	float		m_fSpeed;
@@ -53,6 +59,7 @@ protected:
 	bool		m_bDead;
 
 	int			m_iDrawID = 0;
+	int			m_iScore = 0;
 
 	float		m_fCX;
 	float		m_fCY;

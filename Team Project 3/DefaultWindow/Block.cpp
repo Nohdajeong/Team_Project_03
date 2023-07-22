@@ -36,6 +36,8 @@ void CBlock::Initialize()
 
 	m_iDrawID = 0;
 
+	m_iScore = 0;
+
 	m_eRender = GAMEOBJECT;
 }
 
@@ -61,10 +63,6 @@ int CBlock::Update()
 
 #pragma endregion
 
-	if (m_tInfo.vPos.y >= 500) {
-		m_fSpeed = 0.f;
-	}
-
 	m_tInfo.vPos.y += m_fSpeed;
 
 	__super::Update_Rect();
@@ -74,6 +72,11 @@ int CBlock::Update()
 
 void CBlock::Late_Update()
 {
+	if (m_tInfo.vPos.y >= 510.f) {
+		m_fSpeed = 0.f;
+	}
+	if (Search(this))
+		m_fSpeed = 0.f;
 }
 
 void CBlock::Render(HDC hDC)
@@ -81,27 +84,28 @@ void CBlock::Render(HDC hDC)
 
 	HDC		hMemDC = CBmpMgrS2::Get_Instance()->Find_Img(L"BlockA");
 
-	GdiTransparentBlt(hDC,
-		int(m_vPoint[1].x), // 복사 받을 위치 X,Y 좌표
-		int(m_vPoint[1].y),
-		(int)m_fCX,	// 복사 받을 가로, 세로 길이
-		(int)m_fCY,
-		hMemDC,			// 비트맵 이미지를 담고 있는 DC
-		(int)m_iDrawID * m_fCX,					// 비트맵을 출력할 시작 X,Y좌표
-		0,
-		(int)m_fCX,		// 출력할 비트맵의 가로, 세로 사이즈
-		(int)m_fCY,
-		RGB(195, 134, 255)); // 제거하고자 하는 색상
+	if (m_tInfo.vPos.y >= 70.f) {
+		GdiTransparentBlt(hDC,
+			m_tRect.left, // 복사 받을 위치 X,Y 좌표
+			m_tRect.top,
+			(int)m_fCX,	// 복사 받을 가로, 세로 길이
+			(int)m_fCY,
+			hMemDC,			// 비트맵 이미지를 담고 있는 DC
+			(int)m_iDrawID * m_fCX,					// 비트맵을 출력할 시작 X,Y좌표
+			0,
+			(int)m_fCX,		// 출력할 비트맵의 가로, 세로 사이즈
+			(int)m_fCY,
+			RGB(195, 134, 255)); // 제거하고자 하는 색상
 
-	MoveToEx(hDC, (int)m_vPoint[0].x, (int)m_vPoint[0].y, nullptr);
+		MoveToEx(hDC, (int)m_vPoint[0].x, (int)m_vPoint[0].y, nullptr);
 
-	for (int i = 0; i < 4; ++i) {
-		LineTo(hDC, (int)m_vPoint[i].x, (int)m_vPoint[i].y);
+		for (int i = 0; i < 4; ++i) {
+			LineTo(hDC, (int)m_vPoint[i].x, (int)m_vPoint[i].y);
 
+		}
+
+		LineTo(hDC, m_vPoint[0].x, m_vPoint[0].y);
 	}
-
-	LineTo(hDC, m_vPoint[0].x, m_vPoint[0].y);
-
 }
 
 void CBlock::Release()
@@ -119,7 +123,7 @@ void CBlock::Key_Input()
 			m_fAngle += D3DXToRadian(45.f);
 
 		if (CKeyMgrS2::Get_Instance()->Key_Down(VK_LEFT)) {
-			if (m_tInfo.vPos.x > 300)
+			if (m_tInfo.vPos.x > 360)
 				m_tInfo.vPos.x -= m_fCX;
 		}
 
@@ -129,4 +133,17 @@ void CBlock::Key_Input()
 		}
 	}
 
+}
+
+bool CBlock::Search(CObj* _pTarget)
+{
+	if (m_tInfo.vPos.y - m_fCY >= _pTarget->Get_Info().vPos.y) {
+
+		if (m_tInfo.vPos.x > _pTarget->Get_Info().vPos.x && (m_tInfo.vPos.x - m_fCX) < _pTarget->Get_Info().vPos.x)
+			return true;
+		else if (m_tInfo.vPos.x < _pTarget->Get_Info().vPos.x && (m_tInfo.vPos.x + m_fCX) > _pTarget->Get_Info().vPos.x)
+			return true;
+	}
+
+	return false;
 }

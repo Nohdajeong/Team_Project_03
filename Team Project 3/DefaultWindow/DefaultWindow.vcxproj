@@ -164,6 +164,7 @@
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="ObjMgrS2.h" />
+    <ClInclude Include="PlayBox.h" />
     <ClInclude Include="Print.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Scene.h" />
@@ -190,6 +191,7 @@
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="Obj.cpp" />
     <ClCompile Include="ObjMgrS2.cpp" />
+    <ClCompile Include="PlayBox.cpp" />
     <ClCompile Include="Print.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneMgr.cpp" />

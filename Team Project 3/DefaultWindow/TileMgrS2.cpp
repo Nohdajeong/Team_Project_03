@@ -45,8 +45,8 @@ void CTileMgrS2::Late_Update()
 
 void CTileMgrS2::Render(HDC hDC)
 {
-	for (auto& iter : m_vecTile)
-		iter->Render(hDC);
+	//for (auto& iter : m_vecTile)
+	//	iter->Render(hDC);
 
 	int iCullX = (int)abs(CScrollMgr::Get_Instance()->Get_ScollX() / TILECX);
 	int iCullY = (int)abs(CScrollMgr::Get_Instance()->Get_ScollY() / TILECY);

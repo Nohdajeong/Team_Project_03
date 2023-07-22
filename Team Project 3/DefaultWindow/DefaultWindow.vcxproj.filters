@@ -145,6 +145,9 @@
     <Filter Include="Scene\02. Stage2\01. Design\07. ScrollMgr">
       <UniqueIdentifier>{ed960eff-d346-44d5-8b28-a7e999b26e00}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\02. Stage2\00. Obj\02. PlayBox">
+      <UniqueIdentifier>{7d279111-352f-4ab7-93f8-9970576ee55e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -228,6 +231,9 @@
     <ClInclude Include="ScrollMgr.h">
       <Filter>Scene\02. Stage2\01. Design\07. ScrollMgr</Filter>
     </ClInclude>
+    <ClInclude Include="PlayBox.h">
+      <Filter>Scene\02. Stage2\00. Obj\02. PlayBox</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -295,6 +301,9 @@
     </ClCompile>
     <ClCompile Include="ScrollMgr.cpp">
       <Filter>Scene\02. Stage2\01. Design\07. ScrollMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayBox.cpp">
+      <Filter>Scene\02. Stage2\00. Obj\02. PlayBox</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -5,9 +5,9 @@
 #include "AbstractFactoryS2.h"
 #include "KeyMgrS2.h"
 #include "TileMgrS2.h"
+#include "ScrollMgr.h"
 
 CStage2::CStage2()
-	:m_pBlock(nullptr)
 {
 }
 
@@ -18,59 +18,49 @@ CStage2::~CStage2()
 
 void CStage2::Initialize()
 {
+	CObjMgrS2::Get_Instance()->Add_Object(PLAYBOX, CAbstractFactoryS2<CPlayBox>::Create());
 	CObjMgrS2::Get_Instance()->Add_Object(BUTTON, CAbstractFactoryS2<CPrint>::Create());
-	
-	CTileMgrS2::Get_Instance()->Load_Tile();
-	CTileMgrS2::Get_Instance()->Initialize();
 
-	////CLineMgr::Get_Instance()->Initialize();
+	CBmpMgrS2::Get_Instance()->Insert_Bmp(L"../Resource/Back.bmp", L"Back_Game");
 
-	////CTileMgr::Get_Instance()->Initialize();
-
-	//CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Ground.bmp", L"Ground");
 }
 
 void CStage2::Update()
 {
+	m_pBlock = CAbstractFactoryS2<CBlock>::Create();
 
-	if (m_dwPreTime + 4000 < GetTickCount64()) {
-			CObjMgrS2::Get_Instance()->Add_Object(BLOCK, CAbstractFactoryS2<CBlock>::Create());
+	if (m_dwPreTime + 3000 < GetTickCount64()) {
+		CObjMgrS2::Get_Instance()->Add_Object(BLOCK, m_pBlock);
 
-			m_dwPreTime = GetTickCount64();
+		m_dwPreTime = GetTickCount64();
+	}
+
+	if (m_dwLastTime + 1000 < GetTickCount64()) {
+		m_iTime++;
+		m_dwLastTime = GetTickCount64();
 	}
 
 	CObjMgrS2::Get_Instance()->Update();
-	CTileMgrS2::Get_Instance()->Update();
 
 }
 
 void CStage2::Late_Update()
 {
 	CObjMgrS2::Get_Instance()->Late_Update();
-	CTileMgrS2::Get_Instance()->Late_Update();
 }
 
 void CStage2::Render(HDC hDC)
 {
-	Rectangle(hDC, 0, 0, WINCX, WINCY);
+	HDC		hMemDC = CBmpMgrS2::Get_Instance()->Find_Img(L"Back_Game");
+
+	BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);
 
 	CObjMgrS2::Get_Instance()->Render(hDC);
-	CTileMgrS2::Get_Instance()->Render(hDC);
 
-	//HDC		hGoundDC = CBmpMgr::Get_Instance()->Find_Img(L"Ground");
+	SetBkMode(hDC, 1);
+	SetTextColor(hDC, RGB(255, 255, 255));
 
-	//int	iScrollX = (int)CScrollMgr::Get_Instance()->Get_ScollX();
-	//int	iScrollY = (int)CScrollMgr::Get_Instance()->Get_ScollY();
-
-	//BitBlt(hDC,	// 복사 받을 DC(최종적으로 그림을 그릴 DC공간)
-	//	iScrollX, iScrollY, 1920, 1280,
-	//	hGoundDC,			// 비트맵 이미지를 담고 있는 DC
-	//	0,					// 비트맵을 출력할 시작 X,Y좌표
-	//	0,
-	//	SRCCOPY);
-
-
-	swprintf_s(szBuff, L"stage2");
+	swprintf_s(szBuff, L"Time : %d", m_iTime);
 	TextOut(hDC, 100.f, 100.f, szBuff, lstrlen(szBuff));
 
 
