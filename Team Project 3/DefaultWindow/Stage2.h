@@ -3,6 +3,9 @@
 #include "Obj.h"
 #include "BlockJ.h"
 #include "BlockU.h"
+#include "BlockS.h"
+#include "BlockI.h"
+#include "BlockN.h"
 #include "Print.h"
 #include "PlayBox.h"
 
@@ -24,9 +27,9 @@ private:
 	CObj* m_pBlock;
 
 	TCHAR	szBuff[100] = L"";
-	DWORD	m_dwPreTime = GetTickCount64();
-	DWORD	m_dwLastTime = GetTickCount64();
-	DWORD	m_dwTime = GetTickCount64();
+	DWORD	m_dwPreTime = (DWORD)GetTickCount64();
+	DWORD	m_dwLastTime = (DWORD)GetTickCount64();
+	DWORD	m_dwTime = (DWORD)GetTickCount64();
 
 	int		m_iTime = 0;
 	int		m_iRand = 0;

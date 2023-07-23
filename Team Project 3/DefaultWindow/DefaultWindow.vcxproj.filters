@@ -154,6 +154,15 @@
     <Filter Include="Scene\02. Stage2\00. Obj\01. Block\U">
       <UniqueIdentifier>{50f4707a-8fb5-4b8c-95a6-1be70b104745}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\02. Stage2\00. Obj\01. Block\S">
+      <UniqueIdentifier>{8d3aac80-f927-4f32-853e-3aecf20f98c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\00. Obj\01. Block\I">
+      <UniqueIdentifier>{0d756e61-f797-4101-b41f-3b466a60053d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\02. Stage2\00. Obj\01. Block\N">
+      <UniqueIdentifier>{902cbf28-9226-4c95-8566-61fc48821fda}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -243,6 +252,15 @@
     <ClInclude Include="Obj.h">
       <Filter>Scene\02. Stage2\00. Obj</Filter>
     </ClInclude>
+    <ClInclude Include="BlockS.h">
+      <Filter>Scene\02. Stage2\00. Obj\01. Block\S</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockI.h">
+      <Filter>Scene\02. Stage2\00. Obj\01. Block\I</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockN.h">
+      <Filter>Scene\02. Stage2\00. Obj\01. Block\N</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -316,6 +334,15 @@
     </ClCompile>
     <ClCompile Include="Obj.cpp">
       <Filter>Scene\02. Stage2\00. Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockS.cpp">
+      <Filter>Scene\02. Stage2\00. Obj\01. Block\S</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockI.cpp">
+      <Filter>Scene\02. Stage2\00. Obj\01. Block\I</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockN.cpp">
+      <Filter>Scene\02. Stage2\00. Obj\01. Block\N</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

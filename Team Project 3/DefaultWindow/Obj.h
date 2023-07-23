@@ -20,7 +20,7 @@ public:
 	float				Get_fCY() { return m_fCY; }
 
 	int					Get_Score() { return m_iScore; }
-
+	
 public:
 	void				Set_Dead() { m_bDead = true; }
 
@@ -63,9 +63,13 @@ protected:
 	bool		m_bDead;
 
 	int			m_iDrawID = 0;
+	int			m_iFirst = 0;
 	int			m_iScore = 0;
 
 	float		m_fCX;
 	float		m_fCY;
+
+	float       m_fLine;
+	
 };
 

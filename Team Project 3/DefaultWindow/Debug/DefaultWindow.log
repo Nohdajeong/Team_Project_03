@@ -1,9 +1,2 @@
 ﻿  Stage2.cpp
-C:\Users\노다정\Desktop\Jusin Academy\팀플\Team_Project_03\Team Project 3\DefaultWindow\Stage2.h(27,36): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\노다정\Desktop\Jusin Academy\팀플\Team_Project_03\Team Project 3\DefaultWindow\Stage2.h(28,37): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\노다정\Desktop\Jusin Academy\팀플\Team_Project_03\Team Project 3\DefaultWindow\Stage2.h(29,33): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\노다정\Desktop\Jusin Academy\팀플\Team_Project_03\Team Project 3\DefaultWindow\Stage2.cpp(52,31): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\노다정\Desktop\Jusin Academy\팀플\Team_Project_03\Team Project 3\DefaultWindow\Stage2.cpp(57,28): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\노다정\Desktop\Jusin Academy\팀플\Team_Project_03\Team Project 3\DefaultWindow\Stage2.cpp(91,22): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\노다정\Desktop\Jusin Academy\팀플\Team_Project_03\Team Project 3\DefaultWindow\Stage2.cpp(91,15): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   DefaultWindow.vcxproj -> C:\Users\노다정\Desktop\Jusin Academy\팀플\Team_Project_03\Team Project 3\Debug\DefaultWindow.exe

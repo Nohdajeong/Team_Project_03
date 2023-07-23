@@ -96,22 +96,20 @@ bool CCollisionMgrS2::Check_Rect(CObj* _Dst, CObj* _Src, float* _pX, float* _pY)
 
 void CCollisionMgrS2::Collision_Sphere(list<CObj*> _Dst, list<CObj*> _Src)
 {
-	//float fX = 0.f, fY = 0.f;
 
-	//for (auto& Dst : _Dst)
-	//{
-	//	for (auto& Src : _Src)
-	//	{
-	//		if (Check_Sphere(Dst, Src))
-	//		{
-	//				// »ó Ãæµ¹
-	//				if (Dst->Get_Info().vPos.y < Src->Get_Info().vPos.y)
-	//				{
-	//					Dst->Set_PosY(+fY);
-	//				}
-	//		}
-	//	}
-	//}
+	for (auto& Dst : _Dst)
+	{
+		for (auto& Src : _Src)
+		{
+			if (Check_Sphere(Dst, Src))
+			{
+				if (Dst->Get_Info().vPos.y > Src->Get_Info().vPos.y)
+					Src->Set_Pos(Vector_Reset(Src).x, Vector_Reset(Dst).y - 60.f);
+				else
+					Src->Set_Pos(Vector_Reset(Src).x, Vector_Reset(Src).y);
+			}
+		}
+	}
 }
 
 bool CCollisionMgrS2::Check_Sphere(CObj* _Dst, CObj* _Src)
@@ -135,4 +133,20 @@ D3DXVECTOR3 CCollisionMgrS2::Vector_Reset(CObj* _Dst)
 	m_vPrepos.y = _Dst->Get_Info().vPrepos.y;
 
 	return m_vPrepos;
+}
+
+bool CCollisionMgrS2::Collison_Sphere_Check(list<CObj*> _Dst, list<CObj*> _Src)
+{
+	for (auto& Dst : _Dst)
+	{
+		for (auto& Src : _Src)
+		{
+			if (Check_Sphere(Dst, Src))
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
 }

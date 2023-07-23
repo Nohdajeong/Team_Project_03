@@ -18,5 +18,7 @@ public:
 
 	static D3DXVECTOR3 Vector_Reset(CObj* _Dst);
 
+public:
+	static bool	Collison_Sphere_Check(list<CObj*> _Dst, list<CObj*> _Src);
 };
 

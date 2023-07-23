@@ -2,6 +2,8 @@
 #include "BlockU.h"
 #include "KeyMgrS2.h"
 #include "BmpMgrS2.h"
+#include "CollisionMgrS2.h"
+#include "ObjMgrS2.h"
 
 CBlockU::CBlockU()
 {
@@ -39,16 +41,17 @@ void CBlockU::Initialize()
 	m_tFrame.iMotion = rand() % 3;
 	m_tFrame.dwSpeed = 300;
 	m_tFrame.dwTime = (DWORD)GetTickCount64();
-	m_fFirst = m_tFrame.iMotion;
+	m_iFirst = m_tFrame.iMotion;
 
 	m_iScore = 0;
-
+	m_fLine = 500.f;
 
 	m_eRender = GAMEOBJECT;
 }
 
 int CBlockU::Update()
 {
+
 	Key_Input();
 
 #pragma region 벡터&행렬
@@ -81,14 +84,11 @@ void CBlockU::Late_Update()
 {
 	m_tInfo.vPrepos = m_tInfo.vPos;
 
-	m_tFrame.iMotion = m_fFirst;
+	m_tFrame.iMotion = m_iFirst;
 
-	if (m_tInfo.vPos.y >= 450.f) {
+	if (m_tInfo.vPos.y >= m_fLine + 10) {
 		m_fSpeed = 0.f;
 	}
-
-	if (Search(this))
-		m_fSpeed = 0.f;
 
 }
 
@@ -99,15 +99,14 @@ void CBlockU::Render(HDC hDC)
 
 	if (m_tInfo.vPos.y >= 70.f) {
 
-
 		GdiTransparentBlt(hDC,
-			m_tRect.left, // 복사 받을 위치 X,Y 좌표
-			m_tRect.top,
+			(int)m_tRect.left, // 복사 받을 위치 X,Y 좌표
+			(int)m_tRect.top,
 			(int)m_fCX,	// 복사 받을 가로, 세로 길이
 			(int)m_fCY,
 			hMemDC,			// 비트맵 이미지를 담고 있는 DC
-			m_tFrame.iFrameStart * m_fCX,					// 비트맵을 출력할 시작 X,Y좌표
-			m_tFrame.iMotion * m_fCY,
+			int(m_tFrame.iFrameStart * m_fCX),					// 비트맵을 출력할 시작 X,Y좌표
+			int(m_tFrame.iMotion * m_fCY),
 			(int)m_fCX,		// 출력할 비트맵의 가로, 세로 사이즈
 			(int)m_fCY,
 			RGB(195, 134, 255)); // 제거하고자 하는 색상
@@ -121,20 +120,19 @@ void CBlockU::Release()
 
 void CBlockU::Key_Input()
 {
-
-	if (m_tInfo.vPos.y <= 440.f) {
+	if (m_tInfo.vPos.y <= m_fLine - 60.f) {
 		if (CKeyMgrS2::Get_Instance()->Key_Down('A')) {
 			m_fAngle -= D3DXToRadian(90.f);
-			m_fFirst -= 1.f;
-			if (m_fFirst == -1.f)
-				m_fFirst = 3.f;
+			m_iFirst -= 1;
+			if (m_iFirst == -1)
+				m_iFirst = 3;
 		}
 
 		if (CKeyMgrS2::Get_Instance()->Key_Down('D')) {
 			m_fAngle += D3DXToRadian(90.f);
-			m_fFirst += 1.f;
-			if (m_fFirst == 4.f)
-				m_fFirst = 0.f;
+			m_iFirst += 1;
+			if (m_iFirst == 4)
+				m_iFirst = 0;
 		}
 
 		if (CKeyMgrS2::Get_Instance()->Key_Down(VK_LEFT)) {
@@ -148,17 +146,4 @@ void CBlockU::Key_Input()
 		}
 	}
 
-}
-
-bool CBlockU::Search(CObj* _pTarget)
-{
-	if (m_tInfo.vPos.y - m_fCY >= _pTarget->Get_Info().vPos.y) {
-
-		if (m_tInfo.vPos.x > _pTarget->Get_Info().vPos.x && (m_tInfo.vPos.x - m_fCX) < _pTarget->Get_Info().vPos.x)
-			return true;
-		else if (m_tInfo.vPos.x < _pTarget->Get_Info().vPos.x && (m_tInfo.vPos.x + m_fCX) > _pTarget->Get_Info().vPos.x)
-			return true;
-	}
-
-	return false;
 }

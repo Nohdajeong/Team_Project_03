@@ -51,13 +51,13 @@ void CPrint::Render(HDC hDC)
 		GdiTransparentBlt(hDC,
 			(int)m_tInfo.vPos.x, // 복사 받을 위치 X,Y 좌표
 			(int)m_tInfo.vPos.y,
-			m_fCX,	// 복사 받을 가로, 세로 길이
-			m_fCY,
+			(int)m_fCX,	// 복사 받을 가로, 세로 길이
+			(int)m_fCY,
 			hMemDC,			// 비트맵 이미지를 담고 있는 DC
-			m_tFrame.iFrameStart * m_fCX,					// 비트맵을 출력할 시작 X,Y좌표
-			m_tFrame.iMotion * m_fCY,
-			m_fCX,		// 출력할 비트맵의 가로, 세로 사이즈
-			m_fCY,
+			int(m_tFrame.iFrameStart * m_fCX),					// 비트맵을 출력할 시작 X,Y좌표
+			int(m_tFrame.iMotion * m_fCY),
+			(int)m_fCX,		// 출력할 비트맵의 가로, 세로 사이즈
+			(int)m_fCY,
 			RGB(195, 134, 255)); // 제거하고자 하는 색상
 
 }

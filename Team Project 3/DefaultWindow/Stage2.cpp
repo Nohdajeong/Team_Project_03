@@ -32,11 +32,9 @@ void CStage2::Initialize()
 
 void CStage2::Update()
 {
-	if (m_dwPreTime + 4000 < GetTickCount64()) {
+	if (m_dwPreTime + 3000 < GetTickCount64()) {
 
-
-		switch (m_iRand % 2)
-		{
+		switch (m_iRand % 5) {
 		case 0:
 			CObjMgrS2::Get_Instance()->Add_Object(BLOCKJ, CAbstractFactoryS2<CBlockJ>::Create());
 			m_iRand++;
@@ -46,15 +44,31 @@ void CStage2::Update()
 			CObjMgrS2::Get_Instance()->Add_Object(BLOCKU, CAbstractFactoryS2<CBlockU>::Create());
 			m_iRand++;
 			break;
+
+		case 2:
+			CObjMgrS2::Get_Instance()->Add_Object(BLOCKS, CAbstractFactoryS2<CBlockS>::Create());
+			m_iRand++;
+			break;
+
+		case 3:
+			CObjMgrS2::Get_Instance()->Add_Object(BLOCKI, CAbstractFactoryS2<CBlockI>::Create());
+			m_iRand++;
+			break;
+
+		case 4:
+			CObjMgrS2::Get_Instance()->Add_Object(BLOCKN, CAbstractFactoryS2<CBlockN>::Create());
+			m_iRand++;
+			break;
+
 		}
 
 
-		m_dwPreTime = GetTickCount64();
+		m_dwPreTime = (DWORD)GetTickCount64();
 	}
 
-	if (m_dwTime + 1000 < GetTickCount64()) {
+	if (m_dwTime + 1000 < (DWORD)GetTickCount64()) {
 		m_iTime++;
-		m_dwTime = GetTickCount64();
+		m_dwTime = (DWORD)GetTickCount64();
 	}
 
 	CObjMgrS2::Get_Instance()->Update();
@@ -66,13 +80,21 @@ void CStage2::Late_Update()
 {
 	CObjMgrS2::Get_Instance()->Late_Update();
 
-	//CCollisionMgrS2::Collision_Sphere(
-	//	CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ),
-	//	CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU));
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU));
 
-	//CCollisionMgrS2::Collision_Sphere(
-	//	CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU),
-	//	CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ));
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS));
+
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI));
+
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKN));
 
 }
 
@@ -88,7 +110,7 @@ void CStage2::Render(HDC hDC)
 	SetTextColor(hDC, RGB(255, 255, 255));
 
 	swprintf_s(szBuff, L"Time : %d", m_iTime);
-	TextOut(hDC, 100.f, 100.f, szBuff, lstrlen(szBuff));
+	TextOut(hDC, 100, 100, szBuff, lstrlen(szBuff));
 
 
 }
