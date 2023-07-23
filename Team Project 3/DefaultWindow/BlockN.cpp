@@ -32,12 +32,11 @@ void CBlockN::Initialize()
 	m_tInfo.vDir = { 1.f, 0.f, 0.f };
 	m_tInfo.vLook = { 0.f, -1.f, 0.f };
 
-	m_fSpeed = 3.f;
+	m_fSpeed = 4.f;
 
 	CBmpMgrS2::Get_Instance()->Insert_Bmp(L"../Resource/BlockN.bmp", L"BlockN");
 
-	m_tFrame.iFrameStart = 0;
-	m_tFrame.iFrameEnd = 0;
+	m_iDrawID = m_iColor;
 	m_tFrame.iMotion = rand() % 3;
 	m_tFrame.dwSpeed = 300;
 	m_tFrame.dwTime = (DWORD)GetTickCount64();
@@ -111,7 +110,7 @@ void CBlockN::Render(HDC hDC)
 			(int)m_fCX,	// 복사 받을 가로, 세로 길이
 			(int)m_fCY,
 			hMemDC,			// 비트맵 이미지를 담고 있는 DC
-			int(m_tFrame.iFrameStart * m_fCX),					// 비트맵을 출력할 시작 X,Y좌표
+			int(m_iDrawID * m_fCX),					// 비트맵을 출력할 시작 X,Y좌표
 			int(m_tFrame.iMotion * m_fCY),
 			(int)m_fCX,		// 출력할 비트맵의 가로, 세로 사이즈
 			(int)m_fCY,
@@ -126,7 +125,7 @@ void CBlockN::Release()
 
 void CBlockN::Key_Input()
 {
-	if (m_tInfo.vPos.y <= m_fLine - 240.f) {
+	if (m_tInfo.vPos.y <= m_fLine - m_fCY * 4) {
 		if (CKeyMgrS2::Get_Instance()->Key_Down('A')) {
 			m_fAngle -= D3DXToRadian(90.f);
 			m_iFirst -= 1;

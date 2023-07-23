@@ -31,13 +31,13 @@ void CStage2::Initialize()
 	
 	m_iRand = 0;
 	m_iCount = 0;
-
+	m_iDraw_Count = 0;
 }
 
 void CStage2::Update()
 {
 
-	if (m_dwPreTime + 2500 < GetTickCount64()) {
+	if (m_dwPreTime + 2000 < GetTickCount64()) {
 
 		switch (m_iRand % 5) {
 		case 0:
@@ -84,7 +84,6 @@ void CStage2::Update()
 
 	CObjMgrS2::Get_Instance()->Update();
 
-
 }
 
 void CStage2::Late_Update()
@@ -94,19 +93,47 @@ void CStage2::Late_Update()
 	if (CKeyMgrS2::Get_Instance()->Key_Down('P'))
 		CSceneMgr::Get_Instance()->Scene_Change(SC_STAGE3);
 
+	if (m_iTime == 60)
+		CSceneMgr::Get_Instance()->Scene_Change(SC_STAGE3);
+
+	if (m_iCount >= 5)
+		CSceneMgr::Get_Instance()->Scene_Change(SC_STAGE3);
+
 	Collision_BlockJ();
 	Collision_BlockU();
 	Collision_BlockS();
 	Collision_BlockI();
 
 
-	//if (Draw_Same())
-	//	m_iCount++;
-	//else
-	//	m_iCount += 0;
+	if (Draw_Same()) {
+		if (CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ).front()->Get_First() == 0)
+			m_iDraw_Count++;
 
-	if (m_iCount >= 2)
-		CSceneMgr::Get_Instance()->Scene_Change(SC_STAGE3);
+		if (CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU).front()->Get_First() == 0)
+			m_iDraw_Count++;
+
+		if (CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS).front()->Get_First() == 0)
+			m_iDraw_Count++;
+
+		if (CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI).front()->Get_First() == 0)
+			m_iDraw_Count++;
+
+		if (CObjMgrS2::Get_Instance()->Get_Objects(BLOCKN).front()->Get_First() == 0)
+			m_iDraw_Count++;
+
+
+		if (m_iDraw_Count > 0) {
+
+			CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ).front()->Set_Dead();
+			CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU).front()->Set_Dead();
+			CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS).front()->Set_Dead();
+			CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI).front()->Set_Dead();
+			CObjMgrS2::Get_Instance()->Get_Objects(BLOCKN).front()->Set_Dead();
+
+			m_iCount = m_iDraw_Count;
+		}
+	}
+
 }
 
 void CStage2::Render(HDC hDC)
@@ -177,6 +204,9 @@ void CStage2::Collision_BlockS()
 		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS),
 		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKN));
 
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ));
 
 }
 
@@ -187,15 +217,30 @@ void CStage2::Collision_BlockI()
 		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI),
 		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKN));
 
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ));
+
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU));
+
 }
 
 bool CStage2::Draw_Same()
 {
-		if ((CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ).front()->Get_First() == 0) &&
-			(CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU).front()->Get_First() == 0) &&
-			(CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS).front()->Get_First() == 0) &&
-			(CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI).front()->Get_First() == 0) &&
-			(CObjMgrS2::Get_Instance()->Get_Objects(BLOCKN).front()->Get_First() == 0))
+	if (CCollisionMgrS2::Collison_Sphere_Check(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU)) &&
+		CCollisionMgrS2::Collison_Sphere_Check(
+			CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU),
+			CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS)) &&
+		CCollisionMgrS2::Collison_Sphere_Check(
+			CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS),
+			CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI)) &&
+		CCollisionMgrS2::Collison_Sphere_Check(
+			CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI),
+			CObjMgrS2::Get_Instance()->Get_Objects(BLOCKN)))
 			return true;
 
 	return false;

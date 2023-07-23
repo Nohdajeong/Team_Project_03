@@ -41,12 +41,15 @@ private:
 private:
 	TCHAR	szBuff[100] = L"";
 	TCHAR	szBuff2[100] = L"";
+
 	DWORD	m_dwPreTime = (DWORD)GetTickCount64();
 	DWORD	m_dwLastTime = (DWORD)GetTickCount64();
+	DWORD	m_dwDrawTime = (DWORD)GetTickCount64();
 	DWORD	m_dwTime = (DWORD)GetTickCount64();
 
 	int		m_iTime = 0;
-	int		m_iRand = 0;
-	int		m_iCount = 0;
+	int		m_iRand;
+	int		m_iCount;
+	int		m_iDraw_Count;
 };
 

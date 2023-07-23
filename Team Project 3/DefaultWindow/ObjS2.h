@@ -19,11 +19,13 @@ public:
 	float				Get_fCX() { return m_fCX; }
 	float				Get_fCY() { return m_fCY; }
 
-	int					Get_Score() { return m_iScore; }
 	int					Get_First() { return m_iFirst; }
+	int					Get_Score() { return m_iScore; }
 	
 public:
 	void				Set_Dead() { m_bDead = true; }
+	void				Set_DrawID(int _iDrawID) { m_iDrawID = _iDrawID; }
+	void				Set_Color(int _iColor) { m_iColor = _iColor; }
 
 	void				Set_PosX(float _fX) { m_tInfo.vPos.x += _fX; }
 	void				Set_PosY(float _fY) { m_tInfo.vPos.y += _fY; }
@@ -64,6 +66,7 @@ protected:
 	bool		m_bDead;
 
 	int			m_iDrawID = 0;
+	int			m_iColor = 0;
 	int			m_iFirst = 0;
 	int			m_iScore = 0;
 

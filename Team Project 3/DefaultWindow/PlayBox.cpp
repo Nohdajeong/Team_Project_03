@@ -28,10 +28,6 @@ void CPlayBox::Initialize()
 
 	CBmpMgrS2::Get_Instance()->Insert_Bmp(L"../Resource/BlockBox.bmp", L"BlockBox");
 
-	CTileMgrS2::Get_Instance()->Load_Tile();
-	CTileMgrS2::Get_Instance()->Initialize();
-
-
 	m_eRender = UI;
 }
 
@@ -39,8 +35,6 @@ int CPlayBox::Update()
 {	
 	if (m_bDead)
 		return OBJ_DEAD;
-
-	CTileMgrS2::Get_Instance()->Update();
 
 	__super::Update_Rect();
 

@@ -1,0 +1,16 @@
+Data -> Char_100
+Image->Teacher
+Resource-> BlockBox, PlayBox / Teacher, Teacher_50 삭제
+
+BlockI
+BlockJ
+BlockN
+BlockS
+BlockU
+-> cpp 수정
+
+ObjS2
+-> h 수정
+
+Stage2 
+-> cpp, h 수정
