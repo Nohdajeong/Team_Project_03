@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Define.h"
-#include "Obj.h"
+#include "ObjS2.h"
 
 class CObjMgrS2
 {
@@ -10,13 +10,13 @@ private:
 	~CObjMgrS2();
 
 public:
-	CObj* Get_Player() { return m_ObjList[PLAYER].front(); }
-	CObj* Get_Target(OBJID eID, CObj* pInstance);
+	CObjS2* Get_Player() { return m_ObjList[PLAYER].front(); }
+	CObjS2* Get_Target(OBJID eID, CObjS2* pInstance);
 
-	list<CObj*>	Get_Objects(OBJID eId) { return m_ObjList[eId]; }
+	list<CObjS2*>	Get_Objects(OBJID eId) { return m_ObjList[eId]; }
 
 public:
-	void		Add_Object(OBJID eID, CObj* pInstance);
+	void		Add_Object(OBJID eID, CObjS2* pInstance);
 	int			Update();
 	void		Late_Update();
 	void		Render(HDC hDC);
@@ -44,8 +44,8 @@ public:
 	}
 
 private:
-	list<CObj*>	m_ObjList[OBJID_END];
-	list<CObj*>	m_RenderList[RENDER_END];
+	list<CObjS2*>	m_ObjList[OBJID_END];
+	list<CObjS2*>	m_RenderList[RENDER_END];
 
 	static CObjMgrS2* m_pInstance;
 };

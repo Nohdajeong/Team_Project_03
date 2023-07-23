@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Obj.h"
+#include "ObjS2.h"
 
-class CTileS2 : public CObj
+class CTileS2 : public CObjS2
 {
 public:
 	CTileS2();

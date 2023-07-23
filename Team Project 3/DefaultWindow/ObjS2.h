@@ -2,11 +2,11 @@
 
 #include "Define.h"
 
-class CObj abstract
+class CObjS2 abstract
 {
 public:
-	CObj();
-	virtual ~CObj();
+	CObjS2();
+	virtual ~CObjS2();
 
 public:
 	const INFO&			Get_Info() const { return m_tInfo; }
@@ -20,6 +20,7 @@ public:
 	float				Get_fCY() { return m_fCY; }
 
 	int					Get_Score() { return m_iScore; }
+	int					Get_First() { return m_iFirst; }
 	
 public:
 	void				Set_Dead() { m_bDead = true; }
@@ -33,7 +34,7 @@ public:
 		m_tInfo.vPos.y = _fY;
 	}
 
-	void				Set_Target(CObj* _pTarget) { m_pTarget = _pTarget; }
+	void				Set_Target(CObjS2* _pTarget) { m_pTarget = _pTarget; }
 	void				Set_Score(int _iScore) { m_iScore += _iScore; }
 
 public:
@@ -54,7 +55,7 @@ protected:
 	DIRECTION	m_eDir;
 	FRAME		m_tFrame;
 
-	CObj*		m_pTarget;
+	CObjS2*		m_pTarget;
 	TCHAR*		m_pFrameKey;
 
 	float		m_fSpeed;

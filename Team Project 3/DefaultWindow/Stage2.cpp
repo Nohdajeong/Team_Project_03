@@ -8,8 +8,10 @@
 #include "ScrollMgr.h"
 #include "time.h"
 #include "CollisionMgrS2.h"
+#include "SceneMgr.h"
 
 CStage2::CStage2()
+	:m_pBlockJ(nullptr), m_pBlockU(nullptr), m_pBlockS(nullptr), m_pBlockI(nullptr), m_pBlockN(nullptr)
 {
 }
 
@@ -26,37 +28,45 @@ void CStage2::Initialize()
 	CObjMgrS2::Get_Instance()->Add_Object(BUTTON, CAbstractFactoryS2<CPrint>::Create());
 
 	CBmpMgrS2::Get_Instance()->Insert_Bmp(L"../Resource/PlayBox.bmp", L"Back_Game");
+	
 	m_iRand = 0;
+	m_iCount = 0;
 
 }
 
 void CStage2::Update()
 {
-	if (m_dwPreTime + 3000 < GetTickCount64()) {
+
+	if (m_dwPreTime + 2500 < GetTickCount64()) {
 
 		switch (m_iRand % 5) {
 		case 0:
-			CObjMgrS2::Get_Instance()->Add_Object(BLOCKJ, CAbstractFactoryS2<CBlockJ>::Create());
+			m_pBlockJ = CAbstractFactoryS2<CBlockJ>::Create();
+			CObjMgrS2::Get_Instance()->Add_Object(BLOCKJ, m_pBlockJ);
 			m_iRand++;
 			break;
 
 		case 1:
-			CObjMgrS2::Get_Instance()->Add_Object(BLOCKU, CAbstractFactoryS2<CBlockU>::Create());
+			m_pBlockU = CAbstractFactoryS2<CBlockU>::Create();
+			CObjMgrS2::Get_Instance()->Add_Object(BLOCKU, m_pBlockU);
 			m_iRand++;
 			break;
 
 		case 2:
-			CObjMgrS2::Get_Instance()->Add_Object(BLOCKS, CAbstractFactoryS2<CBlockS>::Create());
+			m_pBlockS = CAbstractFactoryS2<CBlockS>::Create();
+			CObjMgrS2::Get_Instance()->Add_Object(BLOCKS, m_pBlockS);
 			m_iRand++;
 			break;
 
 		case 3:
-			CObjMgrS2::Get_Instance()->Add_Object(BLOCKI, CAbstractFactoryS2<CBlockI>::Create());
+			m_pBlockI = CAbstractFactoryS2<CBlockI>::Create();
+			CObjMgrS2::Get_Instance()->Add_Object(BLOCKI, m_pBlockI);
 			m_iRand++;
 			break;
 
 		case 4:
-			CObjMgrS2::Get_Instance()->Add_Object(BLOCKN, CAbstractFactoryS2<CBlockN>::Create());
+			m_pBlockN = CAbstractFactoryS2<CBlockN>::Create();
+			CObjMgrS2::Get_Instance()->Add_Object(BLOCKN, m_pBlockN);
 			m_iRand++;
 			break;
 
@@ -71,6 +81,7 @@ void CStage2::Update()
 		m_dwTime = (DWORD)GetTickCount64();
 	}
 
+
 	CObjMgrS2::Get_Instance()->Update();
 
 
@@ -80,22 +91,22 @@ void CStage2::Late_Update()
 {
 	CObjMgrS2::Get_Instance()->Late_Update();
 
-	CCollisionMgrS2::Collision_Sphere(
-		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ),
-		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU));
+	if (CKeyMgrS2::Get_Instance()->Key_Down('P'))
+		CSceneMgr::Get_Instance()->Scene_Change(SC_STAGE3);
 
-	CCollisionMgrS2::Collision_Sphere(
-		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU),
-		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS));
+	Collision_BlockJ();
+	Collision_BlockU();
+	Collision_BlockS();
+	Collision_BlockI();
 
-	CCollisionMgrS2::Collision_Sphere(
-		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS),
-		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI));
 
-	CCollisionMgrS2::Collision_Sphere(
-		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI),
-		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKN));
+	//if (Draw_Same())
+	//	m_iCount++;
+	//else
+	//	m_iCount += 0;
 
+	if (m_iCount >= 2)
+		CSceneMgr::Get_Instance()->Scene_Change(SC_STAGE3);
 }
 
 void CStage2::Render(HDC hDC)
@@ -112,9 +123,81 @@ void CStage2::Render(HDC hDC)
 	swprintf_s(szBuff, L"Time : %d", m_iTime);
 	TextOut(hDC, 100, 100, szBuff, lstrlen(szBuff));
 
+	swprintf_s(szBuff2, L"Count : %d", m_iCount);
+	TextOut(hDC, 100, 150, szBuff2, lstrlen(szBuff2));
 
 }
 
 void CStage2::Release()
 {
 }
+
+void CStage2::Collision_BlockJ()
+{
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU));
+
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS));
+
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI));
+
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKN));
+
+}
+
+void CStage2::Collision_BlockU()
+{
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS));
+
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI));
+
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKN));
+}
+
+void CStage2::Collision_BlockS()
+{
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI));
+
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKN));
+
+
+}
+
+void CStage2::Collision_BlockI()
+{
+
+	CCollisionMgrS2::Collision_Sphere(
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI),
+		CObjMgrS2::Get_Instance()->Get_Objects(BLOCKN));
+
+}
+
+bool CStage2::Draw_Same()
+{
+		if ((CObjMgrS2::Get_Instance()->Get_Objects(BLOCKJ).front()->Get_First() == 0) &&
+			(CObjMgrS2::Get_Instance()->Get_Objects(BLOCKU).front()->Get_First() == 0) &&
+			(CObjMgrS2::Get_Instance()->Get_Objects(BLOCKS).front()->Get_First() == 0) &&
+			(CObjMgrS2::Get_Instance()->Get_Objects(BLOCKI).front()->Get_First() == 0) &&
+			(CObjMgrS2::Get_Instance()->Get_Objects(BLOCKN).front()->Get_First() == 0))
+			return true;
+
+	return false;
+}
+

@@ -15,13 +15,13 @@ CObjMgrS2::~CObjMgrS2()
 }
 
 
-CObj* CObjMgrS2::Get_Target(OBJID eID, CObj* pInstance)
+CObjS2* CObjMgrS2::Get_Target(OBJID eID, CObjS2* pInstance)
 {
 
 	if (m_ObjList[eID].empty())
 		return nullptr;
 
-	CObj* pTarget = nullptr;
+	CObjS2* pTarget = nullptr;
 	float	fDistance = 0.f;
 
 	for (auto& iter : m_ObjList[eID])
@@ -47,7 +47,7 @@ CObj* CObjMgrS2::Get_Target(OBJID eID, CObj* pInstance)
 
 }
 
-void CObjMgrS2::Add_Object(OBJID eID, CObj* pInstance)
+void CObjMgrS2::Add_Object(OBJID eID, CObjS2* pInstance)
 {
 	if (OBJID_END <= eID || nullptr == pInstance)
 		return;
@@ -66,7 +66,7 @@ int CObjMgrS2::Update()
 
 			if (OBJ_DEAD == iResult)
 			{
-				Safe_Delete<CObj*>(*iter);
+				Safe_Delete<CObjS2*>(*iter);
 				iter = m_ObjList[i].erase(iter);
 			}
 			else
@@ -101,7 +101,7 @@ void CObjMgrS2::Render(HDC hDC)
 
 	for (size_t i = 0; i < RENDER_END; ++i)
 	{
-		m_RenderList[i].sort([](CObj* pDst, CObj* pSrc) { return pDst->Get_Info().vPos.y < pSrc->Get_Info().vPos.y; });
+		m_RenderList[i].sort([](CObjS2* pDst, CObjS2* pSrc) { return pDst->Get_Info().vPos.y < pSrc->Get_Info().vPos.y; });
 
 		for (auto& iter : m_RenderList[i])
 			iter->Render(hDC);
@@ -114,7 +114,7 @@ void CObjMgrS2::Release()
 {
 	for (size_t i = 0; i < OBJID_END; ++i)
 	{
-		for_each(m_ObjList[i].begin(), m_ObjList[i].end(), Safe_Delete<CObj*>);
+		for_each(m_ObjList[i].begin(), m_ObjList[i].end(), Safe_Delete<CObjS2*>);
 		m_ObjList[i].clear();
 	}
 

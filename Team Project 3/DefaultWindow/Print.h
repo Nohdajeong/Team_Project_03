@@ -1,7 +1,7 @@
 #pragma once
-#include "Obj.h"
+#include "ObjS2.h"
 class CPrint :
-    public CObj
+    public CObjS2
 {
 public:
     CPrint();

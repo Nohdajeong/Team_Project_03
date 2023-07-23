@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Obj.h"
+#include "ObjS2.h"
 
 template<typename T>
 class CAbstractFactoryS2
@@ -10,17 +10,17 @@ public:
 	~CAbstractFactoryS2() {}
 
 public:
-	static CObj* Create()
+	static CObjS2* Create()
 	{
-		CObj* pObj = new T;
+		CObjS2* pObj = new T;
 		pObj->Initialize();
 
 		return pObj;
 	}
 
-	static CObj* Create(float _fX, float _fY)
+	static CObjS2* Create(float _fX, float _fY)
 	{
-		CObj* pObj = new T;
+		CObjS2* pObj = new T;
 		pObj->Initialize();
 		pObj->Set_Pos(_fX, _fY);
 

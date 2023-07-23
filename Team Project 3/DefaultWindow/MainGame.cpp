@@ -20,7 +20,7 @@ void CMainGame::Initialize(void)
 
 
 	CBmpMgrS2::Get_Instance()->Insert_Bmp(L"../Resource/Back.bmp", L"Back");
-	CSceneMgr::Get_Instance()->Scene_Change(SC_STAGE2);
+	CSceneMgr::Get_Instance()->Scene_Change(SC_STAGE1);
 
 }
 

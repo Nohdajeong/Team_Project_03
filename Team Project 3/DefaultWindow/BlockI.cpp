@@ -4,6 +4,7 @@
 #include "BmpMgrS2.h"
 #include "CollisionMgrS2.h"
 #include "ObjMgrS2.h"
+#include "SceneMgr.h"
 
 CBlockI::CBlockI()
 {
@@ -51,6 +52,9 @@ void CBlockI::Initialize()
 
 int CBlockI::Update()
 {
+	if (m_bDead)
+		return OBJ_DEAD;
+
 	Key_Input();
 
 #pragma region บคลอ&วเทฤ
@@ -81,6 +85,9 @@ int CBlockI::Update()
 
 void CBlockI::Late_Update()
 {
+	if (CSceneMgr::Get_Instance()->Get_SceneID() != SC_STAGE2)
+		Set_Dead();
+
 	m_tInfo.vPrepos = m_tInfo.vPos;
 
 	m_tFrame.iMotion = m_iFirst;

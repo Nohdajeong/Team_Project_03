@@ -1,8 +1,8 @@
 #include "stdafx.h"
-#include "Obj.h"
+#include "ObjS2.h"
 
 
-CObj::CObj() 
+CObjS2::CObjS2()
 	: m_fSpeed(0.f), m_fAngle(0.f), m_fCX(0.f), m_fCY(0.f),
 	m_bDead(false)
 {
@@ -11,11 +11,11 @@ CObj::CObj()
 }
 
 
-CObj::~CObj()
+CObjS2::~CObjS2()
 {
 }
 
-void CObj::Update_Rect()
+void CObjS2::Update_Rect()
 {
 	m_tRect.left = LONG(m_tInfo.vPos.x - (m_fCX * 0.5f));
 	m_tRect.top = LONG(m_tInfo.vPos.y - (m_fCY * 0.5f));
@@ -23,7 +23,7 @@ void CObj::Update_Rect()
 	m_tRect.bottom = LONG(m_tInfo.vPos.y + (m_fCY * 0.5f));
 }
 
-void CObj::Move_Frame()
+void CObjS2::Move_Frame()
 {
 	if (m_tFrame.dwTime + m_tFrame.dwSpeed < (DWORD)GetTickCount64())
 	{

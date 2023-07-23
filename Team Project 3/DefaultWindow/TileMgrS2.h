@@ -40,7 +40,7 @@ public:
 
 private:
 	static CTileMgrS2*		m_pInstance;
-	vector<CObj*>			m_vecTile;
+	vector<CObjS2*>			m_vecTile;
 
 };
 

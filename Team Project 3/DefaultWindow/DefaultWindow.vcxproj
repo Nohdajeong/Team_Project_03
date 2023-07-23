@@ -166,7 +166,7 @@
     <ClInclude Include="Define.h" />
     <ClInclude Include="Logo.h" />
     <ClInclude Include="MainGame.h" />
-    <ClInclude Include="Obj.h" />
+    <ClInclude Include="ObjS2.h" />
     <ClInclude Include="ObjMgrS2.h" />
     <ClInclude Include="PlayBox.h" />
     <ClInclude Include="Print.h" />
@@ -197,7 +197,7 @@
     <ClCompile Include="DefaultWindow.cpp" />
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="MainGame.cpp" />
-    <ClCompile Include="Obj.cpp" />
+    <ClCompile Include="ObjS2.cpp" />
     <ClCompile Include="ObjMgrS2.cpp" />
     <ClCompile Include="PlayBox.cpp" />
     <ClCompile Include="Print.cpp" />

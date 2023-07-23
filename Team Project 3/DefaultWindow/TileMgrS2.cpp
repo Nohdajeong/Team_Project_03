@@ -24,7 +24,7 @@ void CTileMgrS2::Initialize()
 			float	fX = (float)(TILECX >> 1) + (TILECX * j);
 			float	fY = (float)(TILECY >> 1) + (TILECY * i);
 
-			CObj*		pObj = CAbstractFactoryS2<CTileS2>::Create(fX, fY);
+			CObjS2*		pObj = CAbstractFactoryS2<CTileS2>::Create(fX, fY);
 			m_vecTile.push_back(pObj);
 		}
 	}
@@ -75,7 +75,7 @@ void CTileMgrS2::Render(HDC hDC)
 void CTileMgrS2::Release()
 {
 	for_each(m_vecTile.begin(), m_vecTile.end(), 
-		[](CObj* pTemp)
+		[](CObjS2* pTemp)
 	{
 		if (pTemp)
 		{ 
@@ -149,7 +149,7 @@ void CTileMgrS2::Load_Tile()
 		if (0 == dwByte)
 			break;
 
-		CObj*	pObj = CAbstractFactoryS2<CTileS2>::Create(tInfo.vPos.x, tInfo.vPos.y);
+		CObjS2*	pObj = CAbstractFactoryS2<CTileS2>::Create(tInfo.vPos.x, tInfo.vPos.y);
 		dynamic_cast<CTileS2*>(pObj)->Set_ID(iDrawID, iOption);
 
 		m_vecTile.push_back(pObj);

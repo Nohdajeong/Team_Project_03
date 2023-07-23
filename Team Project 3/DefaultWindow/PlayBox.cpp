@@ -4,6 +4,7 @@
 #include "BmpMgrS2.h"
 #include "TileMgrS2.h"
 #include "ScrollMgr.h"
+#include "SceneMgr.h"
 
 CPlayBox::CPlayBox()
 {
@@ -36,6 +37,9 @@ void CPlayBox::Initialize()
 
 int CPlayBox::Update()
 {	
+	if (m_bDead)
+		return OBJ_DEAD;
+
 	CTileMgrS2::Get_Instance()->Update();
 
 	__super::Update_Rect();
@@ -45,7 +49,8 @@ int CPlayBox::Update()
 
 void CPlayBox::Late_Update()
 {
-	CTileMgrS2::Get_Instance()->Late_Update();
+	if (CSceneMgr::Get_Instance()->Get_SceneID() != SC_STAGE2)
+		Set_Dead();
 
 }
 

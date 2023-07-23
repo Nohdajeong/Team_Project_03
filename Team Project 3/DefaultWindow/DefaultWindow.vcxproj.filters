@@ -249,7 +249,7 @@
     <ClInclude Include="BlockU.h">
       <Filter>Scene\02. Stage2\00. Obj\01. Block\U</Filter>
     </ClInclude>
-    <ClInclude Include="Obj.h">
+    <ClInclude Include="ObjS2.h">
       <Filter>Scene\02. Stage2\00. Obj</Filter>
     </ClInclude>
     <ClInclude Include="BlockS.h">
@@ -332,7 +332,7 @@
     <ClCompile Include="BlockU.cpp">
       <Filter>Scene\02. Stage2\00. Obj\01. Block\U</Filter>
     </ClCompile>
-    <ClCompile Include="Obj.cpp">
+    <ClCompile Include="ObjS2.cpp">
       <Filter>Scene\02. Stage2\00. Obj</Filter>
     </ClCompile>
     <ClCompile Include="BlockS.cpp">

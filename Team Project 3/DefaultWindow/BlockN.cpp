@@ -2,8 +2,8 @@
 #include "BlockN.h"
 #include "KeyMgrS2.h"
 #include "BmpMgrS2.h"
-#include "CollisionMgrS2.h"
 #include "ObjMgrS2.h"
+#include "SceneMgr.h"
 
 CBlockN::CBlockN()
 {
@@ -51,6 +51,9 @@ void CBlockN::Initialize()
 
 int CBlockN::Update()
 {
+	if (m_bDead)
+		return OBJ_DEAD;
+
 	Key_Input();
 
 #pragma region บคลอ&วเทฤ
@@ -81,6 +84,9 @@ int CBlockN::Update()
 
 void CBlockN::Late_Update()
 {
+	if (CSceneMgr::Get_Instance()->Get_SceneID() != SC_STAGE2)
+		Set_Dead();
+
 	m_tInfo.vPrepos = m_tInfo.vPos;
 
 	m_tFrame.iMotion = m_iFirst;
@@ -88,6 +94,7 @@ void CBlockN::Late_Update()
 	if (m_tInfo.vPos.y >= m_fLine + 10) {
 		m_fSpeed = 0.f;
 	}
+
 
 }
 

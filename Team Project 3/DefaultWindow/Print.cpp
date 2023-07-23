@@ -2,6 +2,7 @@
 #include "Print.h"
 #include "KeyMgrS2.h"
 #include "BmpMgrS2.h"
+#include "SceneMgr.h"
 
 CPrint::CPrint()
 {
@@ -35,6 +36,9 @@ void CPrint::Initialize()
 
 int CPrint::Update()
 {
+	if (m_bDead)
+		return OBJ_DEAD;
+
 	__super::Move_Frame();
 
 	return OBJ_NOEVENT;
@@ -42,6 +46,9 @@ int CPrint::Update()
 
 void CPrint::Late_Update()
 {
+	if (CSceneMgr::Get_Instance()->Get_SceneID() != SC_STAGE2)
+		Set_Dead();
+
 }
 
 void CPrint::Render(HDC hDC)
